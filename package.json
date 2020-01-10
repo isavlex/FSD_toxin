@@ -1,0 +1,27 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "parcel-plugin-imagemin": "^3.0.0",
+    "parcel-plugin-svg-sprite": "^1.4.1",
+    "postcss-modules": "^1.4.1",
+    "pug": "^2.0.4",
+    "sass": "^1.24.0"
+  },
+  "svgSpriteOptions": {
+    "exclude": ["src/static/fonts/*.svg", "src/icons/outline/*.svg"]
+  },
+  "scripts": {
+    "start": "parcel src/pug/pages/index.pug --open",
+    "clean": "rm -rf docs/* dist/*",
+    "build:parcel": "parcel build src/pug/pages/index.pug -d docs --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

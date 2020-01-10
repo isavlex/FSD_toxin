@@ -1,0 +1,82 @@
+@import 'normalize';
+@import 'vars';
+@import 'fonts';
+@import 'grid';
+@import 'typography';
+@import 'colors';
+@import '../../components/components';
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    background-color: $main-bgcolor;
+  }
+
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd { 
+    margin: 0; 
+}
+
+input,
+button,
+textarea,
+select { font: inherit; }
+
+@include make-wrap();
+@include make-row();
+@include get-adaptive($grid-breakpoints, $wrap-max-widths);
+
+.content {
+    padding: 65px 7.3% 0;
+}
+
+.mb50-indent {
+    margin-bottom: 50px;
+}
+
+.mb20-indent {
+    margin-bottom: 20px;
+}
+
+.ml13-indent {
+    margin-left: 13px;
+}
+
+.v-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.box {
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+}
+
+
+
+@media only screen and (max-width: $tablet) {
+    .md-mb-indent {
+        margin-bottom: 67px;
+    }
+}

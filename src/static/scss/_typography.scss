@@ -1,0 +1,63 @@
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.18rem;
+}
+
+h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 0.87rem;
+}
+
+.text-r {
+    text-align: right;
+}
+
+.text-l {
+    text-align: left;
+}
+
+.text-c {
+    text-align: center;
+}
+
+.h-text--q {
+    font-family: 'Quicksand Bold', 'Arial', sans-serif;
+    color: $dark-shade-100;
+    line-height: 1.3;
+}
+
+.text--qnorm {
+    font-family: 'Quicksand', 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+.h-text--m-dark {
+    font-family: 'Montserrat Bold', 'Arial', sans-serif;
+    color: $dark-shade-100;
+    line-height: 1.3;
+}
+
+.h-text--m-light {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: $dark-shade-25;
+    line-height: 1.3;
+}
+
+
+.p-text{
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: $dark-shade-75;
+    line-height: 1.5;
+}
+
+.p-text--light {
+    color: $dark-shade-25;
+}

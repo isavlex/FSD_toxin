@@ -1,0 +1,26 @@
+extends ../layouts/main
+
+block varibles
+    -var pageTitle = 'Cards'
+    -var cssPath = '../../static/scss/main.scss'
+
+block content
+    +header()
+    .wrap.content
+        .row
+            .col
+                +selection()
+
+                
+                
+
+            .col
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis necessitatibus, nostrum voluptas ab consequatur quo id! Quas alias fugit voluptatum corporis dolore aliquam laudantium, reprehenderit, quae, architecto porro in! Veniam.
+
+            .col
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur debitis suscipit id sint, recusandae blanditiis sequi impedit saepe modi quod fuga sit, explicabo deserunt provident, quaerat ab facere alias! Placeat.
+
+                
+                
+block scripts
+    script(src="../../static/js/main.js")

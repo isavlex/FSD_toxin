@@ -1,0 +1,72 @@
+extends ../layouts/main
+
+block varibles
+    -var pageTitle = 'Colors & Type'
+    -var cssPath = '../../static/scss/main.scss'
+
+block content
+    +header()
+    .wrap.content
+        .row
+            .col-12.col-md-6.md-mb-indent
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.dark-shade100
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Dark Shade 100% <span class="text--qnorm">#1F2041</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.dark-shade75
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Dark Shade 75% <span class="text--qnorm">#1F2041</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.dark-shade50
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Dark Shade 50% <span class="text--qnorm">#1F2041</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.dark-shade25
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Dark Shade 25% <span class="text--qnorm">#1F2041</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.dark-shade5
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Dark Shade 5% <span class="text--qnorm">#1F2041</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.purple
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Purple <br /><span class="text--qnorm">#BC9CFF</span>
+                .row.mb20-indent
+                    .col-xl-2.col-md-3.col-6.md-h-right
+                        .box.green
+                    .col-xl-5.col-lg-6.col-md-8.col-6.v-center
+                        h2.h-text--q.ml13-indent Green <br /><span class="text--qnorm">#6FCF97</span>
+                        
+            .col-12.col-md-6
+                .row.mb50-indent
+                    .col-xl-4.col-md-2.col-3.text-r
+                        h1.h-text--m-light H1
+                    .col-xl-8.col-md-10.col-9
+                        h1.h-text--q This one is the sub-section or widget title
+                .row.mb50-indent
+                    .col-xl-4.col-md-2.col-3.text-r
+                        h2.h-text--m-light H2
+                    .col-xl-8.col-md-10.col-9
+                        h2.h-text--q Next one is the item title inside widgets
+                .row.mb50-indent
+                    .col-xl-4.col-md-2.col-3.text-r
+                        h3.h-text--m-light H3
+                    .col-xl-8.col-md-10.col-9        
+                        h3.h-text--m-dark This is a label or CTA text
+                .row.mb50-indent
+                    .col-xl-4.col-md-2.col-3.text-r
+                        p.p-text.p-text--light Body
+                    .col-xl-8.col-md-10.col-9
+                        p.p-text This is the body text which is used for most of the design, like paragraphs, lists, etc.
+                
+                
+block scripts
+    script(src="../../static/js/main.js")
