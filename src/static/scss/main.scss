@@ -4,13 +4,15 @@
 @import 'grid';
 @import 'typography';
 @import 'colors';
+@import 'ui-kit';
 @import '../../components/components';
 
 body {
     min-height: 100vh;
     line-height: 1.5;
     background-color: $main-bgcolor;
-  }
+    font-size: 16px;
+}
 
   *,
   *::before,

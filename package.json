@@ -12,12 +12,12 @@
     "sass": "^1.24.0"
   },
   "svgSpriteOptions": {
-    "exclude": ["src/static/fonts/*.svg", "src/icons/outline/*.svg"]
+    "exclude": ["src/static/fonts/*.svg", "src/icons/outline/**.svg"]
   },
   "scripts": {
-    "start": "parcel src/pug/pages/index.pug --open",
+    "start": "parcel src/pug/pages/form-elements.pug --open",
     "clean": "rm -rf docs/* dist/*",
-    "build:parcel": "parcel build src/pug/pages/*.pug -d docs --public-url ./",
+    "build:parcel": "parcel build src/pug/pages/**.pug -d docs --public-url ./",
     "build": "npm run clean && npm run build:parcel"
   },
   "keywords": [],

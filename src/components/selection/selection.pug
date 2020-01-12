@@ -1,11 +1,22 @@
 mixin selection()
     
     section.selection
-        h1.h-text--q Найдём номера под ваши пожелания
+        h1.heading-q Найдём номера под ваши пожелания
         .selection__choose-days
             .selection__arrival
-                h3.h-text--m-dark прибытие
-                input(type="text" value="ДД.ММ.ГГГГ" class="selection__input")
+                h3.heading-mdark прибытие
+                input(type="text" value="ДД.ММ.ГГГГ" class="selection__choice")
             .selection__departure
-                h3.h-text--m-dark выезд
-                input(type="text" value="ДД.ММ.ГГГГ" class="selection__input")
+                h3.heading-mdark выезд
+                input(type="text" value="ДД.ММ.ГГГГ" class="selection__choice")
+        .selection__guests
+            h3.heading-mdark гости
+            select(name="select-guests" class="selection__choice selection__guest" value="")
+                option Сколько гостей
+                option 1 гость
+                option 2 гостя
+                option 3 гостя
+                option 4 гостя
+                option 5 гостей
+        .selection__wrap-btn
+            button.selection__btn подобрать номер

@@ -1,0 +1,18 @@
+mixin dropdown()
+    .dropdown
+        span.dropdown__heading.paragraph Сколько гостей
+        ul.dropdown__list.heading-mdark
+            li.dropdown__item 
+                span.dropdown__type взрослые
+                span.dropdown__count 0
+            li.dropdown__item 
+                span.dropdown__type дети
+                span.dropdown__count 0
+            li.dropdown__item 
+                span.dropdown__type младенцы
+                span.dropdown__count 0
+            
+        .dropdown__actions.heading-mdark
+            span.dropdown__clear очистить
+            span.dropdown__apply применить
+        input(type="hidden" name="" value="")

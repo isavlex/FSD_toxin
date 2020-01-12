@@ -5,11 +5,19 @@ block varibles
     -var cssPath = '../../static/scss/main.scss'
 
 block content
-    ul
-        li
-            a(href="./colors-type.pug") Colors and type
-        li
-            a(href="./cards.pug") Cards
+    +header()
+    .wrap
+        .row
+            .col
+                h1.h-text--q FSD second task
+                h2.h-text--q UI Kit
+                ul
+                    li
+                        h3.h-text--m-dark 
+                            a(href="./colors-type.pug") Colors and type
+                    li
+                        h3.h-text--m-dark
+                            a(href="./cards.pug") Cards
     
     
 

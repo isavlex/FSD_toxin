@@ -22,13 +22,15 @@
     
 }
 
-.selection__input {
+.selection__choice {
     font-family: 'Montserrat', 'Arial', sans-serif;
+    font-weight: 400;
     font-size: 0.87rem;
     color: $dark-shade-75;
     line-height: 1.5;
     max-width: 150px;
-    padding: 15px 32px 9px 15px;
+    appearance: none;
+    padding: 9px 15px;
     margin-top: 5px;
     background-color: #FFFFFF;
     border: 1px solid $dark-shade-25;
@@ -36,3 +38,34 @@
     background: url(../../icons/outline/expand.svg) 90% 55% no-repeat;
     cursor: pointer;
 }
+
+
+.selection__guests {
+    margin-top: 20px;
+    
+}
+
+.selection__guest {
+    width: 100%;
+    max-width: 100%;
+    background: url(../../icons/outline/expand.svg) 96% 55% no-repeat;
+}
+
+.selection__wrap-btn {
+    margin-top: 31px;
+}
+
+.selection__btn {
+    width: 100%;
+    border-radius: 22px;
+    border: 0;
+    background: url(../../icons/outline/arrow-forward.svg) 90% no-repeat, linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 15px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,41 @@
+extends ../layouts/white-bg
+
+block varibles
+    -var pageTitle = 'Form elements'
+    -var cssPath = '../../static/scss/main.scss'
+
+block content
+    +header()
+    .wrap.content
+        .row
+            .col
+                .row
+                    .col
+                        h3.heading-mdark Text Field
+                    .col
+                        h3.heading-mlight Default
+                .row
+                    .col
+                        input(type="text" placeholder="Email" class="text-field")
+                .row
+                    .col
+                        h3.heading-mdark Text Field
+                    .col
+                        h3.heading-mlight Hover / Focus
+                .row
+                    .col
+                        input(type="text" placeholder="Email" class="text-field")
+                .row
+                    .col
+                        h3.heading-mdark Dropdown
+                    .col
+                        h3.heading-mlight Default
+                .row
+                    .col
+                        +dropdown()
+            .col
+            .col
+
+
+block scripts
+    script(src="../../static/js/main.js")
