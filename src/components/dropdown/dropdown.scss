@@ -1,20 +1,36 @@
 .dropdown {
     max-width: 320px;
-    padding: 12px 15px;
+    user-select: none;
     border: 1px solid $dark-shade-25;
-    // cursor: pointer;
     border-radius: 2px;
     box-shadow: 0px 10px 20px $dark-shade-5;
+    &:focus {
+        border: 1px solid $dark-shade-50;
+        outline: none;
+    }
 }
 
 .dropdown__heading {
     font-size: 0.87rem;
+    padding: 12px 15px;
+    background: url(../../icons/outline/expand.svg) 95% 54% no-repeat;
+    cursor: pointer;
+    
+}
+
+.dropdown__wrap {
+    display: none;
+    padding: 0px 6px 11px 15px;
+    border-top: 1px solid $dark-shade-50;
+}
+
+.dropdown__wrap--active {
+    display: block;
 }
 
 .dropdown__list {
-    // display: none;
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     font-size: 0.75rem;
     text-transform: uppercase;
     
@@ -22,15 +38,70 @@
 
 .dropdown__item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 12px 0;
+    padding: 3.5px 0;
 
 }
+
+.dropdown__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 92px;
+}
+
+.dropdown__minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $dark-shade-50;
+    border-radius: 50%;
+    cursor: pointer;
+    &::after {
+        color: $dark-shade-50;
+        content: "-";
+    }
+}
+
+.dropdown__minus--deactive {
+    border-color: $dark-shade-25;
+    cursor: auto;
+    &::after {
+        color: $dark-shade-25;
+    }
+}
+
+.dropdown__plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $dark-shade-50;
+    border-radius: 50%;
+    cursor: pointer;
+    &::after {
+        color: $dark-shade-50;
+        content: "+";
+    }
+}
+
 
 .dropdown__actions {
     display: flex;
     justify-content: space-between;
+    margin-top: 18px;
     text-transform: uppercase;
-    font-size: 0.87rem;
-    color: $purple;
+    font-size: 0.75rem;
 }
+
+// .dropdown__clear {
+    
+// }
+
+// .dropdown__apply {
+    
+// }

@@ -1,3 +1,3 @@
-import message from "./message";
+import {toggleClass} from "../../components/dropdown/dropdown";
 
-message('Hello World!');
+toggleClass(".dropdown__heading", ".dropdown__wrap", "dropdown__wrap--active");

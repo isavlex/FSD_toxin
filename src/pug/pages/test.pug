@@ -1,0 +1,20 @@
+extends ../layouts/main
+
+block varibles
+    -var pageTitle = 'Index'
+    -var cssPath = '../../static/scss/main.scss'
+
+block content
+    +header()
+    .wrap
+        .columns-wrapper
+            section.column
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores earum animi incidunt aliquid eum alias voluptate quos amet maxime optio inventore illo cumque sapiente cupiditate dolore perspiciatis, praesentium deleniti.
+            section.column
+                p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti explicabo blanditiis cumque, unde eos ipsam voluptate iusto odio obcaecati quibusdam amet, optio beatae praesentium quia quo assumenda quis rem officiis?
+            section.column
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero inventore voluptate numquam expedita beatae rerum, iste est exercitationem obcaecati quo excepturi? Nisi eius necessitatibus, quaerat quos officiis consequatur eveniet laboriosam?
+    
+
+block scripts
+    script(src="../../static/js/main.js")

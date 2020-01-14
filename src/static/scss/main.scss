@@ -52,8 +52,22 @@ select { font: inherit; }
     margin-bottom: 50px;
 }
 
+.mb40-indent {
+    margin-bottom: 40px;
+}
+
 .mb20-indent {
     margin-bottom: 20px;
+}
+
+.maxw-350 {
+    max-width: 350px;
+}
+
+
+
+.mb5-indent {
+    margin-bottom: 5px;
 }
 
 .ml13-indent {
@@ -75,7 +89,16 @@ select { font: inherit; }
     border-radius: 6px;
 }
 
+.columns-wrapper {
+    columns: 20rem;
+    column-gap: 20px;
+}
 
+.column {
+    break-inside: avoid;
+    margin: 0 0 2rem 0;
+    padding: 1.3rem 1rem 0 1rem;
+}
 
 @media only screen and (max-width: $tablet) {
     .md-mb-indent {

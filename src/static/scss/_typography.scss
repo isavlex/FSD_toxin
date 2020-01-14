@@ -17,6 +17,7 @@ p {
     font-size: 0.87rem;
 }
 
+
 //align
 
 .text-r {
@@ -72,3 +73,19 @@ p {
     font-weight: 400;
 }
 
+
+//links
+
+.pink-link {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: $purple;
+    font-size: 0.75rem;
+    &:hover {
+        color: $dark-shade-50;
+    }
+    &:active {
+        color: $dark-shade-75;
+    }
+}
