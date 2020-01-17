@@ -94,6 +94,14 @@ $wrap-max-widths: (
         max-width: 100%;
     }
 
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
     //column and order without media queries
 
     @for $i from 1 through $columns {

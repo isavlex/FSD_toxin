@@ -74,6 +74,16 @@ select { font: inherit; }
     margin-left: 13px;
 }
 
+.pl15only-indent {
+    padding: 0 0 0 15px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+
 .v-center {
     display: flex;
     flex-direction: column;
@@ -90,7 +100,7 @@ select { font: inherit; }
 }
 
 .columns-wrapper {
-    columns: 20rem;
+    columns: 30rem;
     column-gap: 20px;
 }
 

@@ -8,14 +8,30 @@
         border: 1px solid $dark-shade-50;
         outline: none;
     }
+
+    &--dated{
+        width: 148px;
+    }
+
+    &--filtered {
+        width: auto;
+        max-width: 264px;
+    }
+
 }
+
 
 .dropdown__heading {
     font-size: 0.87rem;
     padding: 12px 15px;
     background: url(../../icons/outline/expand.svg) 95% 54% no-repeat;
     cursor: pointer;
-    
+    &--dated {
+        background-position-x: 89%;
+    }
+    &--filtered {
+        background-position-x: 93%;
+    }
 }
 
 .dropdown__wrap {
@@ -98,10 +114,4 @@
     font-size: 0.75rem;
 }
 
-// .dropdown__clear {
-    
-// }
 
-// .dropdown__apply {
-    
-// }

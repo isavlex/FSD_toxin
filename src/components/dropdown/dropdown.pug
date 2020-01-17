@@ -1,30 +1,34 @@
-mixin dropdown()
-    div(class="dropdown" tabindex="0" )
-        div(class="dropdown__heading paragraph")
-            span Сколько гостей
-            
-        .dropdown__wrap
-            ul.dropdown__list.heading-mdark
-                li.dropdown__item 
-                    span.dropdown__type взрослые
-                    .dropdown__count
-                        .dropdown__minus
-                        span.dropdown__number 2
-                        .dropdown__plus
-                li.dropdown__item 
-                    span.dropdown__type дети
-                    .dropdown__count
-                        .dropdown__minus
-                        span.dropdown__number 1
-                        .dropdown__plus
-                li.dropdown__item 
-                    span.dropdown__type младенцы
-                    .dropdown__count
-                        .dropdown__minus.dropdown__minus--deactive
-                        span.dropdown__number 0
-                        .dropdown__plus
-                
-                .dropdown__actions.heading-mdark
-                    a(href="#" class="dropdown__clear pink-link") очистить
-                    a(href="#" class="dropdown__apply pink-link") применить
-                input(type="hidden" name="" value="")
+mixin dropdown(date, addMod)
+    if !date
+        div(class="dropdown" tabindex="0" )       
+            .dropdown__heading                    
+                span.paragraph Сколько гостей
+            .dropdown__wrap
+                ul.dropdown__list.heading-mb100
+                    li.dropdown__item 
+                        span.dropdown__type взрослые
+                        .dropdown__count
+                            .dropdown__minus
+                            span.dropdown__number 2
+                            .dropdown__plus
+                    li.dropdown__item 
+                        span.dropdown__type дети
+                        .dropdown__count
+                            .dropdown__minus
+                            span.dropdown__number 1
+                            .dropdown__plus
+                    li.dropdown__item 
+                        span.dropdown__type младенцы
+                        .dropdown__count
+                            .dropdown__minus.dropdown__minus--deactive
+                            span.dropdown__number 0
+                            .dropdown__plus
+                    
+                    .dropdown__actions.heading-mb100
+                        a(href="#" class="dropdown__clear pink-link") очистить
+                        a(href="#" class="dropdown__apply pink-link") применить
+                    input(type="hidden" name="" value="")
+    else
+        div(class="dropdown dropdown" + addMod tabindex="0" )
+            div(class="dropdown__heading dropdown__heading" + addMod)
+                span.paragraph= date

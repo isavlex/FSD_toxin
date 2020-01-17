@@ -1,8 +1,14 @@
 {
   "name": "parcel",
   "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {},
+  "main": "form-elements.pug",
+  "dependencies": {
+    "inputmask": "^5.0.3",
+    "jquery": "^3.4.1",
+    "text-mask": "0.0.2",
+    "text-mask-addons": "^3.8.0",
+    "vanilla-text-mask": "^5.1.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.7.3",
     "parcel-plugin-imagemin": "^3.0.0",
@@ -12,10 +18,13 @@
     "sass": "^1.24.0"
   },
   "svgSpriteOptions": {
-    "exclude": ["src/static/fonts/*.svg", "src/icons/outline/**.svg"]
+    "exclude": [
+      "src/static/fonts/*.svg",
+      "src/icons/outline/**.svg"
+    ]
   },
   "scripts": {
-    "start": "parcel src/pug/pages/form-elements.pug --open",
+    "start": "parcel serve src/pug/pages/$npm_package_main --open",
     "clean": "rm -rf docs/* dist/*",
     "build:parcel": "parcel build src/pug/pages/**.pug -d docs --public-url ./",
     "build": "npm run clean && npm run build:parcel"

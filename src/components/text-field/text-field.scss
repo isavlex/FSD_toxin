@@ -1,0 +1,25 @@
+.text-field__input {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 15px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    font-size: 0.87rem;
+    &::placeholder {
+        color: $dark-shade-25;
+    }
+    &:focus {
+        outline: none;
+        border: 1px solid $dark-shade-50;
+        &::placeholder {
+            color: $dark-shade-75;
+        }
+    }
+}
+
+.text-field__input--focus {
+    border: 1px solid $dark-shade-50;
+    &::placeholder {
+        color: $dark-shade-75;
+    }
+}
