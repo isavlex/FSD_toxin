@@ -1,5 +1,8 @@
-.icon-logo {
+.header__logo {
+    margin: 30px 0 0 30px;
     width: 48px;
     height: 48px;
-    margin: 30px 0 0 15px;
+    display: inline-block;
+    background: url(../../icons/inline/logo.svg) 50% no-repeat;
+    
 }

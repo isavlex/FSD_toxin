@@ -1,5 +1,5 @@
 {
-  "name": "parcel",
+  "name": "isavlex",
   "version": "1.0.0",
   "main": "form-elements.pug",
   "dependencies": {
@@ -11,22 +11,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",
+    "gh-pages": "^2.2.0",
     "parcel-plugin-imagemin": "^3.0.0",
-    "parcel-plugin-svg-sprite": "^1.4.1",
     "postcss-modules": "^1.4.1",
     "pug": "^2.0.4",
     "sass": "^1.24.0"
   },
-  "svgSpriteOptions": {
-    "include": [
-      "src/icons/inline/**.svg"
-    ]
-  },
   "scripts": {
     "start": "parcel serve src/pug/pages/$npm_package_main --open",
-    "clean": "rm -rf docs/* dist/*",
-    "build:parcel": "parcel build src/pug/pages/form-elements.pug -d docs",
-    "build": "npm run clean && npm run build:parcel"
+    "predeploy": "rm -rf dist/* && parcel build src/pug/pages/index.pug --public-url ./",
+    "deploy": "npm run predeploy && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
