@@ -12,6 +12,6 @@ var e;!function(t,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{}],"coSv":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.setMask=r;var e=d(require("vanilla-text-mask")),t=d(require("text-mask-addons/dist/createAutoCorrectedDatePipe")),a=d(require("text-mask-addons/dist/emailMask"));function d(e){return e&&e.__esModule?e:{default:e}}function r(d,r){var u=(new Date).getFullYear(),s=(0,t.default)("dd/mm/yyyy HH:MM",{maxYear:u,minYear:u-100});r="email"===r?"":s;var i=document.querySelector("."+d);(0,e.default)({inputElement:i,mask:""===r?a.default:[/\d/,/\d/,".",/\d/,/\d/,".",/\d/,/\d/,/\d/,/\d/],pipe:r})}
 },{"vanilla-text-mask":"t6Ys","text-mask-addons/dist/createAutoCorrectedDatePipe":"kdWg","text-mask-addons/dist/emailMask":"vWOv"}],"mGny":[function(require,module,exports) {
-"use strict";var e=require("../../components/dropdown/dropdown"),o=require("../../components/text-field/textFieldMask");
+"use strict";var e=require("../../components/dropdown/dropdown"),t=require("../../components/text-field/textFieldMask");(0,e.toggleClass)(".dropdown__heading",".dropdown__wrap","dropdown__wrap--active"),(0,t.setMask)("text-field__input--masked-date"),(0,t.setMask)("text-field__input--masked-email","email");
 },{"../../components/dropdown/dropdown":"LdiQ","../../components/text-field/textFieldMask":"coSv"}]},{},["mGny"], null)
-//# sourceMappingURL=main.b68e8c57.js.map
+//# sourceMappingURL=main.44cc95b6.js.map
