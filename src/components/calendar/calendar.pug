@@ -1,0 +1,71 @@
+mixin calendar()
+    .calendar
+        table.calendar__table
+            thead
+                tr
+                    th
+                        span.calendar__arrow
+                    th(colspan="5")
+                        span.calendar__month Январь 2020
+                    th
+                        span.calendar__arrow.calendar__arrow--forward
+                tr
+                    th.calendar__week-day Пн
+                    th.calendar__week-day Вт
+                    th.calendar__week-day Ср
+                    th.calendar__week-day Чт
+                    th.calendar__week-day Пт
+                    th.calendar__week-day Сб
+                    th.calendar__week-day Вс
+            tbody
+                tr
+                    td.calendar__day.calendar__day--off 29
+                    td.calendar__day.calendar__day--off 30
+                    td.calendar__day.calendar__day--off 31
+                    td.calendar__day 1
+                    td.calendar__day 2
+                    td.calendar__day 3
+                    td.calendar__day 4
+                tr
+                    td.calendar__day 5
+                    td.calendar__day 6
+                    td.calendar__day 7
+                    td.calendar__day 8
+                    td.calendar__day 9
+                    td.calendar__day 10
+                    td.calendar__day 11
+                tr
+                    td.calendar__day 12
+                    td.calendar__day 13
+                    td.calendar__day 14
+                    td.calendar__day 15
+                    td.calendar__day 16
+                    td.calendar__day 17
+                    td.calendar__day 18
+                tr
+                    td.calendar__day.calendar__day--start 19
+                    td.calendar__day.calendar__day--between 20
+                    td.calendar__day.calendar__day--between 21
+                    td.calendar__day.calendar__day--between 22
+                    td.calendar__day.calendar__day--end 23
+                    td.calendar__day 24
+                    td.calendar__day 25
+                tr 
+                    td.calendar__day 26
+                    td.calendar__day 27
+                    td.calendar__day 28
+                    td.calendar__day 29
+                    td.calendar__day 30
+                    td.calendar__day 31
+                    td.calendar__day.calendar__day--off 1
+                tr
+                    td.calendar__day.calendar__day--off 2
+                    td.calendar__day.calendar__day--off 3
+                    td.calendar__day.calendar__day--off 4
+                    td.calendar__day.calendar__day--off 5
+                    td.calendar__day.calendar__day--off 6
+                    td.calendar__day.calendar__day--off 7
+                    td.calendar__day.calendar__day--off 8
+        .calendar__actions.heading-mb100
+            a(href="#" class="calendar__clear pink-link") очистить
+            a(href="#" class="calendar__apply pink-link") применить

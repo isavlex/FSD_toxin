@@ -41,7 +41,6 @@ textarea,
 select { font: inherit; }
 
 @include make-wrap();
-@include make-row();
 @include get-adaptive($grid-breakpoints, $wrap-max-widths);
 
 .content {

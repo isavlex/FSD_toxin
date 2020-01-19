@@ -68,21 +68,35 @@ $wrap-max-widths: (
     }
 }
 
-//generate row - containier for col
 
-@mixin make-row() {
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 ($grid-gap-width / -2);
-    }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 ($grid-gap-width / -2);
+}
+
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.v-columns {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 %cols {
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding: 0 15px;
+    padding: 0 ($grid-gap-width / 2);
 }
 //generate adaptive column and wrap
 
@@ -94,14 +108,6 @@ $wrap-max-widths: (
         max-width: 100%;
     }
 
-    .flex {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .w-100 {
-        width: 100%;
-    }
     //column and order without media queries
 
     @for $i from 1 through $columns {

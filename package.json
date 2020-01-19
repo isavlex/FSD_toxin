@@ -1,7 +1,7 @@
 {
   "name": "isavlex",
   "version": "1.0.0",
-  "main": "form-elements.pug",
+  "main": "cards.pug",
   "dependencies": {
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
