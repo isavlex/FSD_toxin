@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "cards.pug",
   "dependencies": {
+    "air-datepicker": "^2.2.3",
+    "bootstrap": "^4.4.1",
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
     "text-mask": "0.0.2",
     "text-mask-addons": "^3.8.0",
     "vanilla-text-mask": "^5.1.1"

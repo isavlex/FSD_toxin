@@ -37,6 +37,10 @@
     border-radius: 4px;
     background: url(../../icons/expand.svg) 90% 55% no-repeat;
     cursor: pointer;
+    &:focus {
+        border: 1px solid $dark-shade-50;
+        outline: none;
+    }
 }
 
 

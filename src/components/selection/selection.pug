@@ -5,10 +5,10 @@ mixin selection()
         .selection__choose-days
             .selection__arrival
                 h3.heading-mb100 прибытие
-                input(type="text" value="ДД.ММ.ГГГГ" class="selection__choice")
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="selection__choice selection__choice--arrival")
             .selection__departure
                 h3.heading-mb100 выезд
-                input(type="text" value="ДД.ММ.ГГГГ" class="selection__choice")
+                input(type="text" placeholder="ДД.ММ.ГГГГ" class="selection__choice selection__choice--departure")
         .selection__guests
             h3.heading-mb100 гости
             select(name="select-guests" class="selection__choice selection__guest" value="")
