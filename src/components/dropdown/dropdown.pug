@@ -1,5 +1,5 @@
-mixin dropdown(date, addMod)
-    if !date
+mixin dropdown(mode, rangeHead1="", rangeHead2="", addClass="")
+    if !mode
         div(class="dropdown" tabindex="0" )       
             .dropdown__heading                    
                 span.paragraph Сколько гостей
@@ -28,9 +28,12 @@ mixin dropdown(date, addMod)
                         a(href="#" class="dropdown__clear pink-link") очистить
                         a(href="#" class="dropdown__apply pink-link") применить
                     input(type="hidden" name="" value="")
-    else
-        div(class="dropdown dropdown" + addMod tabindex="0" )
-            div(class="dropdown__heading dropdown__heading" + addMod)
-                span.paragraph= date
-            .dropdown__wrap
+    else if mode == "range"
+        div(class="dropdown dropdown--range")
+            div(class="dropdown__from")
+                h3.heading-mb100= rangeHead1
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + addClass)
+            div(class="dropdown__to" + mode)
+                h3.heading-mb100= rangeHead2
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + addClass)
                 

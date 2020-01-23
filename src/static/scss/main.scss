@@ -19,28 +19,6 @@ body {
   *::before,
   *::after { box-sizing: border-box; }
 
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  ul[class],
-  ol[class],
-  li,
-  figure,
-  figcaption,
-  blockquote,
-  dl,
-  dd { 
-    margin: 0; 
-}
-
-input,
-button,
-textarea,
-select { font: inherit; }
-
 @include make-wrap();
 @include get-adaptive($grid-breakpoints, $wrap-max-widths);
 
@@ -64,11 +42,6 @@ select { font: inherit; }
     max-width: 350px;
 }
 
-
-
-.mb5-indent {
-    margin-bottom: 5px;
-}
 
 .ml13-indent {
     margin-left: 13px;

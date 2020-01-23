@@ -37,8 +37,8 @@
   }
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 17px;
+    height: 18px;
   }
 
   path {
@@ -47,9 +47,6 @@
   }
 }
 
-.datepicker--nav-action[data-action="next"] {
-  transform: rotate(180deg);
-}
 
 .datepicker--nav-title {
   border-radius: $datepickerBorderRadius;
