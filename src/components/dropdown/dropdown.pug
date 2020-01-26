@@ -2,31 +2,31 @@ mixin dropdown(mode, rangeHead1="", rangeHead2="", addClass="")
     if !mode
         div(class="dropdown" tabindex="0" )       
             .dropdown__heading                    
-                span.paragraph Сколько гостей
+                span.dropdown__total-amount.paragraph Количество гостей
             .dropdown__wrap
                 ul.dropdown__list.heading-mb100
-                    li.dropdown__item 
+                    li.dropdown__item
                         span.dropdown__type взрослые
-                        .dropdown__count
-                            .dropdown__minus
-                            span.dropdown__number 2
+                        .dropdown__count.dropdown__adults 
+                            .dropdown__minus.dropdown__minus--deactive
+                            span.dropdown__number 0
                             .dropdown__plus
-                    li.dropdown__item 
+                    li.dropdown__item
                         span.dropdown__type дети
-                        .dropdown__count
-                            .dropdown__minus
-                            span.dropdown__number 1
+                        .dropdown__count.dropdown__children 
+                            .dropdown__minus.dropdown__minus--deactive
+                            span.dropdown__number 0
                             .dropdown__plus
-                    li.dropdown__item 
+                    li.dropdown__item
                         span.dropdown__type младенцы
-                        .dropdown__count
+                        .dropdown__count.dropdown__babies 
                             .dropdown__minus.dropdown__minus--deactive
                             span.dropdown__number 0
                             .dropdown__plus
                     
                     .dropdown__actions.heading-mb100
-                        a(href="#" class="dropdown__clear pink-link") очистить
-                        a(href="#" class="dropdown__apply pink-link") применить
+                        a(class="dropdown__clear pink-link") очистить
+                        a(class="dropdown__apply pink-link") применить
                     input(type="hidden" name="" value="")
     else if mode == "range"
         div(class="dropdown dropdown--range")

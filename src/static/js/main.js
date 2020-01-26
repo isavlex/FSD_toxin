@@ -1,7 +1,7 @@
 var jquery = require("jquery");
 window.$ = window.jQuery = jquery;
 
-import {toggleClass} from "../../components/dropdown/dropdown";
+
 import {setMask} from "../../components/text-field/textFieldMask";
 
 
