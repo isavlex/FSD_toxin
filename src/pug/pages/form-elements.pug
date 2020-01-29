@@ -16,7 +16,7 @@ block content
                         h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +text-field("Email", "text-field__input--masked-email")
+                        +text-field("email")
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Text Field
@@ -24,7 +24,7 @@ block content
                         h3.heading-mn50 Hover / Focus
                 .row.mb40-indent
                     .col
-                        +text-field("This is pretty awesome", "text-field__input--focus")
+                        +text-field("text", "text-field__input--focus")
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Dropdown
@@ -32,7 +32,8 @@ block content
                         h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +dropdown()
+                        +dropdown("guests", "first")
+                        
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 masked text field
@@ -40,17 +41,32 @@ block content
                         h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +text-field("ДД.ММ.ГГГГ", "text-field__input--masked-date")
-                .row.mb5-indent
+                        +text-field("mask", "", "ДД.ММ.ГГГГ")
+                .row.mb40-indent
                     .col
-                        +dropdown("range", "Date dropdown", "Date dropdown", "reservation")
+                        +dropdown("range", "reservation", "Date dropdown", "Date dropdown")
                     
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 filter date dropdown
                 .row.mb40-indent
                     .col
-                        +dropdown("19 авг - 23 авг", "--filtered")
+                        +dropdown("filter", "super-filter")
+                .row.mb5-indent
+                    .col
+                        h3.heading-mb100 subscription text field
+                .row.mb100-indent
+                    .col
+                        +text-field("subscription")
+                .row.mb5-indent
+                    .col
+                        h3.heading-mb100 dropdown
+                    .col.text-r
+                        h3.heading-mn50 Default
+                .row.mb20-indent
+                    .col
+                        +dropdown("guests", "second")
+                        
             .col.maxw-350
             .col.maxw-350
 

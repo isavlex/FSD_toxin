@@ -1,8 +1,8 @@
-mixin dropdown(mode, rangeHead1="", rangeHead2="", addClass="")
-    if !mode
-        div(class="dropdown" tabindex="0" )       
+mixin dropdown(mode, addClass="", rangeHead1="", rangeHead2="")
+    if mode == "guests"
+        div(class="dropdown dropdown--" + addClass tabindex="0" )       
             .dropdown__heading                    
-                span.dropdown__total-amount.paragraph Количество гостей
+                span.dropdown__total-amount.paragraph Сколько гостей
             .dropdown__wrap
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
@@ -25,9 +25,33 @@ mixin dropdown(mode, rangeHead1="", rangeHead2="", addClass="")
                             .dropdown__plus
                     
                     .dropdown__actions.heading-mb100
-                        a(class="dropdown__clear pink-link") очистить
+                        a(class="dropdown__clear dropdown__clear--off pink-link") очистить
                         a(class="dropdown__apply pink-link") применить
                     input(type="hidden" name="" value="")
+    else if mode == "options"
+        div(class="dropdown dropdown--" + addClass tabindex="0" )
+            .dropdown__heading                    
+                span.dropdown__total-amount.paragraph 
+            .dropdown__wrap
+                    ul.dropdown__list.heading-mb100
+                        li.dropdown__item
+                            span.dropdown__type спальни
+                            .dropdown__count.dropdown__adults 
+                                .dropdown__minus.dropdown__minus--deactive
+                                span.dropdown__number 0
+                                .dropdown__plus
+                        li.dropdown__item
+                            span.dropdown__type кровати
+                            .dropdown__count.dropdown__children 
+                                .dropdown__minus.dropdown__minus--deactive
+                                span.dropdown__number 0
+                                .dropdown__plus
+                        li.dropdown__item
+                            span.dropdown__type ванные комнаты
+                            .dropdown__count.dropdown__babies 
+                                .dropdown__minus.dropdown__minus--deactive
+                                span.dropdown__number 0
+                                .dropdown__plus
     else if mode == "range"
         div(class="dropdown dropdown--range")
             div(class="dropdown__from")
@@ -36,4 +60,7 @@ mixin dropdown(mode, rangeHead1="", rangeHead2="", addClass="")
             div(class="dropdown__to" + mode)
                 h3.heading-mb100= rangeHead2
                 input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + addClass)
+    else if mode == "filter"
+        div(class="dropdown dropdown--filtered dropdown--" + addClass)
+            input( readonly="readonly" spellcheck="false" placeholder="ДД М - ДД М" class="dropdown__heading dropdown__heading--filtered")
                 

@@ -1,10 +1,11 @@
 .text-field__input {
     width: 100%;
     max-width: 320px;
-    padding: 12px 15px;
+    padding: 11px 15px;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     font-size: 0.87rem;
+    box-shadow: 0px 10px 20px $dark-shade-5;
     &::placeholder {
         color: $dark-shade-25;
     }
@@ -15,11 +16,24 @@
             color: $dark-shade-75;
         }
     }
-}
 
-.text-field__input--focus {
-    border: 1px solid $dark-shade-50;
-    &::placeholder {
-        color: $dark-shade-75;
+    &--focus {
+        border: 1px solid $dark-shade-50;
+        &::placeholder {
+            color: $dark-shade-75;
+        }
+    }
+
+    &--masked {
+        &:focus {
+            border: 1px solid $dark-shade-25;
+            &::placeholder {
+                color: $dark-shade-25;
+            }
+        }
+    }
+    &--signed {
+        max-width: 267px;
+        background: url(./../../icons/arrow-forward.svg) no-repeat 95%;
     }
 }

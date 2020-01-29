@@ -2,8 +2,11 @@ require("../../components/calendar/datepicker.js");
 import { toggleClass, howManyGuests } from "../../components/dropdown/dropdown";
 
 
-toggleClass(".dropdown__heading", ".dropdown__wrap", "dropdown__wrap--active");
-howManyGuests();
+toggleClass(".dropdown--first .dropdown__heading", ".dropdown--first .dropdown__wrap", "dropdown__wrap--active");
+
+
+howManyGuests(".dropdown--first");
+
 $(document).ready(function () {
     $('.dropdown__heading--from-reservation, .dropdown__heading--to-reservation').datepicker({
         altField: '.dropdown__heading--to-reservation',
@@ -31,6 +34,14 @@ $(document).ready(function () {
             secondInput.val(second);
             
         },
+        
+    });
+    $('.dropdown--super-filter .dropdown__heading--filtered').datepicker({
+        dateFormat: "dd M",
+        range: true,
+        multipleDatesSeparator: " - ",
+        clearButton: true,
+        confirmButton: true,
         
     });
 });

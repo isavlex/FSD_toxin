@@ -1,3 +1,14 @@
-mixin text-field(pholder, addclass)
-    .text-field
-        input(type="text" placeholder= pholder class="text-field__input paragraph " + addclass)
+mixin text-field(mod, addclass, mask)
+    if mod == "email"
+        .text-field
+            input(type="email" placeholder="Email" class="text-field__input paragraph " + addclass)
+    else if mod == "text"
+        .text-field
+            input(type="text" placeholder="Type text here" class="text-field__input paragraph " + addclass)
+    else if mod == "mask"
+        .text-field
+            input(type="text" readonly="readonly" placeholder= mask class="text-field__input text-field__input--masked paragraph " + addclass)
+    else if mod == "subscription"
+        .text-field
+            input(type="email" placeholder="Email" class="text-field__input text-field__input--signed paragraph " + addclass)
+    

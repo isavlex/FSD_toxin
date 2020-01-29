@@ -6,17 +6,34 @@ function toggleClass(elClick, elToggle, addClass) {
     });
 }
 
-function howManyGuests() {
-    let addGuests = document.querySelectorAll('.dropdown__plus');
-    let removeGuests = document.querySelectorAll('.dropdown__minus');
-    let numberOfGuests = document.querySelectorAll('.dropdown__number');
-    let totalAmountElement = document.querySelector('.dropdown__total-amount');
-    let clearElement = document.querySelector('.dropdown__clear');
+function howManyGuests(mainClass) {
+    let addGuests = document.querySelectorAll(mainClass + ' .dropdown__plus');
+    let removeGuests = document.querySelectorAll(mainClass + ' .dropdown__minus');
+    let numberOfGuests = document.querySelectorAll(mainClass + ' .dropdown__number');
+    let totalAmountElement = document.querySelector(mainClass + ' .dropdown__total-amount');
+    let clearElement = document.querySelector(mainClass + ' .dropdown__clear');
     let totalAmount = {
         "adults": 0,
         "children": 0,
         "babies": 0,
         "total": 0
+    }
+    
+
+    function getGraduation(guests) {
+        guests = String(guests);
+        let graduation = "";
+        let lastNumber = parseInt(guests[guests.length - 1]);
+        if (parseInt(guests) > 4 && parseInt(guests) < 21) {
+            graduation = "ей";
+        } else if (lastNumber > 1 && lastNumber < 5) {
+            graduation = "я";
+        } else if (lastNumber == 1) {
+            graduation = "ь";
+        } else {
+            graduation = "ей";
+        }
+        return graduation;
     }
     
     Array.from(addGuests).forEach(guest => {
@@ -27,12 +44,17 @@ function howManyGuests() {
                 if (guest.parentNode.classList.contains('dropdown__' + key)) {
                     
                     totalAmount[key]++;
+                    
+                    
                     if (totalAmount[key] > 0) {
                         minusGuest.classList.remove('dropdown__minus--deactive');
                     }
                     numberOfGuests.textContent = totalAmount[key];
                     totalAmount.total++;
-                    totalAmountElement.textContent = "Количество гостей " + totalAmount.total;
+                    if (totalAmount.total == 1) {
+                        clearElement.classList.add('dropdown__clear--on');
+                    }
+                    totalAmountElement.textContent = totalAmount.total + " гост" + getGraduation(totalAmount.total);
                 }
             }
         })
@@ -45,11 +67,16 @@ function howManyGuests() {
                 if (guest.parentNode.classList.contains('dropdown__' + key) && totalAmount[key] != 0) {                   
                     totalAmount[key]--;
                     totalAmount.total--;
-                    if (totalAmount[key] == 0) {
-                        guest.classList.add('dropdown__minus--deactive');
+                    if (totalAmount.total == 0) {
+                        clearElement.classList.remove('dropdown__clear--on');
                     }
                     numberOfGuests.textContent = totalAmount[key];
-                    totalAmountElement.textContent = "Количество гостей " + totalAmount.total;
+                    totalAmountElement.textContent = totalAmount.total + " гост" + getGraduation(totalAmount.total);
+                    if (totalAmount[key] == 0) {
+                        guest.classList.add('dropdown__minus--deactive');
+                        totalAmountElement.textContent = 'Сколько гостей';
+                    }
+                    
                 }
             }
         })

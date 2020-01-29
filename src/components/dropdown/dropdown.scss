@@ -4,7 +4,7 @@
     user-select: none;
     border: 1px solid $dark-shade-25;
     border-radius: 2px;
-    box-shadow: 0px 10px 20px $dark-shade-5;
+    
     &:focus {
         border: 1px solid $dark-shade-50;
         outline: none;
@@ -17,8 +17,9 @@
     }
 
     &--filtered {
+        border: 0;
         width: auto;
-        max-width: 264px;
+        
     }
 
 }
@@ -26,14 +27,15 @@
 .dropdown__heading {
     font-family: $monsterrat;
     font-size: 0.87rem;
-    padding: 12px 15px;
+    padding: 13.5px 15px;
     background: url(./../../icons/expand.svg) 95% 54% no-repeat;
     cursor: pointer;
+    box-shadow: 0px 10px 20px $dark-shade-5;
     &--range {
         background-position-x: 89%;
         width: 150px;
         color: $dark-shade-75;
-        border: 1px solid rgba(31,32,65,.25);
+        border: 1px solid $dark-shade-25;
         border-radius: 4px;
         &:focus {
             border: 1px solid $dark-shade-50;
@@ -41,7 +43,16 @@
         }
     }
     &--filtered {
+        width: 100%;
+        max-width: 267px;
+        color: $dark-shade-75;
+        border-radius: 4px;
+        border: 1px solid $dark-shade-25;
         background-position-x: 93%;
+        &:focus {
+            border: 1px solid $dark-shade-50;
+            outline: none;
+        }
     }
 }
 
@@ -125,4 +136,10 @@
     font-size: 0.75rem;
 }
 
+.dropdown__clear--off {
+    visibility: hidden;
+}
 
+.dropdown__clear--on {
+    visibility: visible;
+}
