@@ -31,24 +31,24 @@ mixin dropdown(mode, addClass="", rangeHead1="", rangeHead2="")
     else if mode == "options"
         div(class="dropdown dropdown--" + addClass tabindex="0" )
             .dropdown__heading                    
-                span.dropdown__total-amount.paragraph 
+                span.dropdown__total-amount.paragraph спальни, кровати
             .dropdown__wrap
                     ul.dropdown__list.heading-mb100
                         li.dropdown__item
                             span.dropdown__type спальни
-                            .dropdown__count.dropdown__adults 
+                            .dropdown__count.dropdown__bedrooms 
                                 .dropdown__minus.dropdown__minus--deactive
                                 span.dropdown__number 0
                                 .dropdown__plus
                         li.dropdown__item
                             span.dropdown__type кровати
-                            .dropdown__count.dropdown__children 
+                            .dropdown__count.dropdown__beds
                                 .dropdown__minus.dropdown__minus--deactive
                                 span.dropdown__number 0
                                 .dropdown__plus
                         li.dropdown__item
                             span.dropdown__type ванные комнаты
-                            .dropdown__count.dropdown__babies 
+                            .dropdown__count.dropdown__bathrooms
                                 .dropdown__minus.dropdown__minus--deactive
                                 span.dropdown__number 0
                                 .dropdown__plus

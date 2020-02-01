@@ -1,11 +1,11 @@
 require("../../components/calendar/datepicker.js");
-import { toggleClass, howManyGuests } from "../../components/dropdown/dropdown";
+import { toggleClass, howMany } from "../../components/dropdown/dropdown";
 
 
-toggleClass(".dropdown--first .dropdown__heading", ".dropdown--first .dropdown__wrap", "dropdown__wrap--active");
+// toggleClass(".dropdown__heading", "dropdown__wrap--active");
 
 
-howManyGuests(".dropdown--first");
+howMany();
 
 $(document).ready(function () {
     $('.dropdown__heading--from-reservation, .dropdown__heading--to-reservation').datepicker({
