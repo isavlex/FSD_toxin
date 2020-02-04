@@ -4,7 +4,8 @@ function showHide (arg) {
     clickElement.forEach(element => {
         let showHideEl = element.parentElement.querySelector(arg.showHideEl);
         element.addEventListener("click", () => {
-            element.classList.toggle(arg.toggleClass);
+            element.classList.toggle(arg.clickToggleClass);
+            
             showHideEl.classList.toggle(arg.showHideToggleClass)
             // if (showHideEl.style.display == "none" || showHideEl.style.display == "") {
                 

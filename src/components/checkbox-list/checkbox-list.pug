@@ -1,11 +1,11 @@
 mixin checkbox-list(options)
-    -let state = ""
+    -let state = "hidden"
     if options.state == "shown"
-        -state = "checkbox-list__list--shown"
+        -state = "shown"
     .checkbox-list
-        div(class="checkbox-list__heading checkbox-list__heading--hidden " + state)
+        div(class="checkbox-list__heading checkbox-list__heading--hidden checkbox-list__heading--" + state)
             h3.heading-mb100 expandable checkbox list
-        ul(class="checkbox-list__list checkbox-list__list--hidden " + state)           
+        ul(class="checkbox-list__list checkbox-list__list--hidden checkbox-list__list--" + state)           
             each item, i in options.list
                 -let isChecked = false;
                 each num in options.checked
