@@ -32,7 +32,7 @@ block content
                         h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +dropdown("guests", "guests")
+                        +dropdown({"mode": "guests", "addClass": "guests"})
                         
                 .row.mb5-indent
                     .col
@@ -44,14 +44,14 @@ block content
                         +text-field("mask", "", "ДД.ММ.ГГГГ")
                 .row.mb40-indent
                     .col
-                        +dropdown("range", "reservation", "Date dropdown", "Date dropdown")
+                        +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "Dropdown",  "rangeHead2": "Dropdown"})
                     
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 filter date dropdown
                 .row.mb40-indent
                     .col
-                        +dropdown("filter", "super-filter")
+                        +dropdown({"mode": "filter", "addClass": "super-filter"})
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 subscription text field
@@ -65,7 +65,18 @@ block content
                         h3.heading-mn50 Default
                 .row.mb20-indent
                     .col
-                        +dropdown("options", "options")
+                        +dropdown({"mode": "options", "addClass": "options"})
+                .row.mb5-indent
+                    .col
+                        h3.heading-mb100 dropdown
+                    .col.text-r
+                        h3.heading-mn50 Default
+                .row.mb20-indent
+                    .col
+                        +dropdown({"mode": "options", "addClass": "options", "state": "active"})
+                .row.mb20-indent
+                    .col
+                        +checkbox-list({"list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3]})
                         
             .col.maxw-350
             .col.maxw-350

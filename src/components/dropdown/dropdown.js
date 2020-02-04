@@ -1,14 +1,14 @@
-function toggleClass(elClick, addClass) {
-    let elementClick = document.querySelectorAll(elClick);    
-    elementClick.forEach( elem => {
-            elem.addEventListener("click", () => {
-                let elementToggle = elem.parentNode.querySelector(".dropdown__wrap");
-                elementToggle.classList.toggle(addClass);
+// function toggleClass(elClick, addClass) {
+//     let elementClick = document.querySelectorAll(elClick);    
+//     elementClick.forEach( elem => {
+//             elem.addEventListener("click", () => {
+//                 let elementToggle = elem.parentNode.querySelector(".dropdown__wrap");
+//                 elementToggle.classList.toggle(addClass);
 
-            })
-        }
-    )
-}
+//             })
+//         }
+//     )
+// }
 
 
 function howMany(mode) {
@@ -165,4 +165,4 @@ function howMany(mode) {
     })
 }
 
-export {toggleClass, howMany};
+export {howMany};

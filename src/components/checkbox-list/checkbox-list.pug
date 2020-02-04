@@ -1,0 +1,16 @@
+mixin checkbox-list(options)
+    
+    .checkbox-list
+        .checkbox-list__heading.checkbox-list__heading--hidden
+            h3.heading-mb100 expandable checkbox list
+        ul.checkbox-list__list           
+            each item, i in options.list
+                -let isChecked = false;
+                each num in options.checked
+                    if i === num
+                        -isChecked = true
+                li.checkbox-list__item
+                    label.checkbox-list__label
+                        input(type="checkbox" class="checkbox-list__input" checked= isChecked)
+                        span.checbox-list__text= item
+                        

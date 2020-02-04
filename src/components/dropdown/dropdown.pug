@@ -1,6 +1,7 @@
-mixin dropdown(mode, addClass="", rangeHead1="", rangeHead2="")
-    if mode == "guests"
-        div(class="dropdown dropdown--" + addClass tabindex="0" )       
+mixin dropdown(options)
+    -var wrap = options.state ? "dropdown__wrap--" : ""
+    if options.mode == "guests"
+        div(class="dropdown dropdown--" + options.addClass tabindex="0" )       
             .dropdown__heading                    
                 span.dropdown__total-amount.paragraph Сколько гостей
             .dropdown__wrap
@@ -28,11 +29,11 @@ mixin dropdown(mode, addClass="", rangeHead1="", rangeHead2="")
                         a(class="dropdown__clear dropdown__clear--off pink-link") очистить
                         a(class="dropdown__apply pink-link") применить
                     input(type="hidden" name="" value="")
-    else if mode == "options"
-        div(class="dropdown dropdown--" + addClass tabindex="0" )
+    else if options.mode == "options"
+        div(class="dropdown dropdown--" + options.addClass tabindex="0" )
             .dropdown__heading                    
                 span.dropdown__total-amount.paragraph спальни, кровати
-            .dropdown__wrap
+            div(class="dropdown__wrap " + wrap + options.state)
                     ul.dropdown__list.heading-mb100
                         li.dropdown__item
                             span.dropdown__type спальни
@@ -52,15 +53,15 @@ mixin dropdown(mode, addClass="", rangeHead1="", rangeHead2="")
                                 .dropdown__minus.dropdown__minus--deactive
                                 span.dropdown__number 0
                                 .dropdown__plus
-    else if mode == "range"
+    else if options.mode == "range"
         div(class="dropdown dropdown--range")
             div(class="dropdown__from")
-                h3.heading-mb100= rangeHead1
-                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + addClass)
-            div(class="dropdown__to" + mode)
-                h3.heading-mb100= rangeHead2
-                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + addClass)
-    else if mode == "filter"
-        div(class="dropdown dropdown--filtered dropdown--" + addClass)
+                h3.heading-mb100= options.rangeHead1
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + options.addClass)
+            div(class="dropdown__to" + options.mode)
+                h3.heading-mb100= options.rangeHead2
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + options.addClass)
+    else if options.mode == "filter"
+        div(class="dropdown dropdown--filtered dropdown--" + options.addClass)
             input( readonly="readonly" spellcheck="false" placeholder="ДД М - ДД М" class="dropdown__heading dropdown__heading--filtered")
                 
