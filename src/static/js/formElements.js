@@ -8,8 +8,9 @@ import { showHide } from "../../components/checkbox-list/checkboxList";
 // showHide(".checkbox-list__heading", ".checkbox-list__list");
 showHide({
     clickEl: ".checkbox-list__heading",
-    toggleClass: "checkbox-list__heading--shown",
-    showHideEl: ".checkbox-list__list"
+    clickToggleClass: "checkbox-list__heading--shown",
+    showHideEl: ".checkbox-list__list",
+    showHideToggleClass: "checkbox-list__list--shown" 
 });
 howMany();
 
