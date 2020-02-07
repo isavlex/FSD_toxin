@@ -8,7 +8,7 @@ block content
     +header()
     .wrap.content
         .row
-            .col.maxw-350
+            .col.mw-350.mr-125
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Text Field
@@ -76,13 +76,33 @@ block content
                         +dropdown({"mode": "options", "addClass": "options", "state": "active"})
                 .row.mb20-indent
                     .col
-                        +checkbox-list({"list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3]})
+                        +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3]})
                 .row.mb40-indent
                     .col
-                        +checkbox-list({"list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
+                        +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
+                .row.mb20-indent
+                    .col
+                        +features({"img": "smile", "heading": "Комфорт", "text": "Шумопоглощающие стены"})
+                .row.mb20-indent
+                    .col
+                        +features({"img": "build", "heading": "Удобство", "text": "Окно в каждой из спален"})
                         
-            .col.maxw-350
-            .col.maxw-350
+            .col.mw-350.mr-125
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "buttons", "heading": "Checkbox Buttons", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "radio", "heading": "Radio buttons", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "toggles", "heading": "Toggle", "toggles": ["Получать спецпредложения", "Получать спецпредложения"], "checked": [0]})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
+
+
+            .col.mw-350.ml-125
 
 
 block scripts

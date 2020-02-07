@@ -1,16 +1,16 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
-import { showHide } from "../../components/checkbox-list/checkboxList";
+import { showHide } from "../../components/switches/switches";
 
 
 // toggleClass(".dropdown__heading", "dropdown__wrap--active");
 
 // showHide(".checkbox-list__heading", ".checkbox-list__list");
 showHide({
-    clickEl: ".checkbox-list__heading",
-    clickToggleClass: "checkbox-list__heading--shown",
-    showHideEl: ".checkbox-list__list",
-    showHideToggleClass: "checkbox-list__list--shown" 
+    clickEl: ".switches__heading",
+    clickToggleClass: "switches__heading--shown",
+    showHideEl: ".switches__list",
+    showHideToggleClass: "switches__list--shown" 
 });
 howMany();
 

@@ -1,0 +1,8 @@
+mixin features(options)
+    .features
+        .features__img
+            img(src="../../icons/" + options.img + ".svg", alt= options.heading class="features__svg")
+        .features__text
+            p.heading-mb75= options.heading
+            p.paragraph= options.text
+
