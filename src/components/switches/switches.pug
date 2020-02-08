@@ -4,18 +4,19 @@ mixin switches(options)
             -let state = "hidden"
             if options.state == "shown"
                 -state = "shown"
-            div(class="switches__heading switches__heading--hidden switches__heading--" + state)
-                h3.heading-mb100= options.heading
-            ul(class="switches__list switches__list--hidden switches__list--" + state)           
-                each item, i in options.list
-                    -let isChecked = false
-                    each num in options.checked
-                        if i === num
-                            -isChecked = true
-                    li.switches__item
-                        label.switches__label
-                            input(type="checkbox" class="switches__input" checked= isChecked)
-                            span.checbox-list__text= item
+            label(class="switches__l-label")
+                input(type="checkbox" class="switches__l-input")
+                h3(class="heading-mb100 switches__heading switches__heading--" + state)= options.heading
+                ul(class="switches__list switches__list--" + state)           
+                    each item, i in options.list
+                        -let isChecked = false
+                        each num in options.checked
+                            if i === num
+                                -isChecked = true
+                        li.switches__item
+                            label.switches__label
+                                input(type="checkbox" class="switches__input" checked= isChecked)
+                                span.checbox-list__text= item
     else if options.mode === "buttons"
         .switches
             .switches__head

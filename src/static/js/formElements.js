@@ -6,12 +6,12 @@ import { showHide } from "../../components/switches/switches";
 // toggleClass(".dropdown__heading", "dropdown__wrap--active");
 
 // showHide(".checkbox-list__heading", ".checkbox-list__list");
-showHide({
-    clickEl: ".switches__heading",
-    clickToggleClass: "switches__heading--shown",
-    showHideEl: ".switches__list",
-    showHideToggleClass: "switches__list--shown" 
-});
+// showHide({
+//     clickEl: ".switches__heading",
+//     clickToggleClass: "switches__heading--shown",
+//     showHideEl: ".switches__list",
+//     showHideToggleClass: "switches__list--shown" 
+// });
 howMany();
 
 $(document).ready(function () {

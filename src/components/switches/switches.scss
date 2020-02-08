@@ -1,16 +1,17 @@
+.switches__l-input {
+    opacity: 0;
+}
+
 .switches__heading {
     cursor: pointer;
-}
-
-.switches__heading--hidden {
     background: url(./../../icons/expand.svg) 95% 25% no-repeat;
-}
-
-.switches__heading--shown {
-    background: url(./../../icons/hide.svg) 95% 25% no-repeat;
+    &--shown {
+        background: url(./../../icons/hide.svg) 95% 25% no-repeat;
+    }
 }
 
 .switches__list {
+    display: none;
     list-style-type: none;
     padding: 0;
     font-family: $monsterrat;
@@ -21,20 +22,43 @@
     margin-top: 17.5px;
 }
 
+
+.switches__list--shown {
+    display: block;
+}
+
+.switches__l-input:checked {
+    + .switches__heading {
+        background: url(./../../icons/hide.svg) 95% 25% no-repeat;
+    }
+    
+    + .switches__heading--shown {
+        background: url(./../../icons/expand.svg) 95% 25% no-repeat;
+    }
+
+    ~ .switches__list {
+        display: block;
+    }
+    
+    ~ .switches__list--shown {
+        display: none;
+    }
+}
+
+
 .switches__buttons {
-    @extend .switches__list;
+    padding: 0;
+    font-family: $monsterrat;
+    font-style: 400;
+    font-size: 0.87rem;
+    line-height: 1.12rem;
+    color: $dark-shade-50;
+    margin-top: 17.5px;
 }
 
 
 .switches__button {
     margin-bottom: 10px;
-}
-
-.switches__list--hidden {
-    display: none;
-}
-.switches__list--shown {
-    display: block;
 }
 
 
@@ -97,7 +121,13 @@
 //toggle
 
 .switches__toggles {
-    @extend .switches__list;
+    padding: 0;
+    font-family: $monsterrat;
+    font-style: 400;
+    font-size: 0.87rem;
+    line-height: 1.12rem;
+    color: $dark-shade-50;
+    margin-top: 17.5px;
 }
 
 .switches__toggle {
@@ -156,7 +186,9 @@
 
 //rich
 .switches__rich-input {
-    @extend .switches__input
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
 }
 
 .switches__rich-head {
@@ -200,7 +232,7 @@
 .switches__rich-input:checked + .switches__rich-head:after {
     width: 6px;
     height: 8px;
-    top: 7.5px;
+    top: 6.5px;
     border-width: 1px;
     border-style: solid;
     border-image: linear-gradient(180deg, $purple 0%, $lilac 100%) 1 100%;
@@ -214,7 +246,13 @@
 //radio
 .switches__r-buttons {
     display: flex;
-    @extend .switches__list;
+    padding: 0;
+    font-family: $monsterrat;
+    font-style: 400;
+    font-size: 0.87rem;
+    line-height: 1.12rem;
+    color: $dark-shade-50;
+    margin-top: 17.5px;
 }
 
 .switches__r-button {
@@ -236,7 +274,7 @@
         
         position: absolute;
         left: 0;
-        top: 0;
+        top: -2px;
         width: 20px;
         height: 20px;
         border: 1px solid $purple;
@@ -249,7 +287,7 @@
         opacity: 0;
         position: absolute;
         left: 4px;
-        top: 4px;
+        top: 2px;
         width: 12px;
         height: 12px;
         border-radius: 50%;
@@ -260,7 +298,4 @@
 
 .switches__r-input:checked + .switches__r-text:after {
     opacity: 1;
-}
-.switches__r-input:focus + .switches__r-text:before {
-
 }
