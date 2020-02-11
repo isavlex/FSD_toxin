@@ -4,7 +4,7 @@ mixin dropdown(options)
         div(class="dropdown dropdown--" + options.addClass tabindex="0" )       
             .dropdown__heading                    
                 span.dropdown__total-amount.paragraph Сколько гостей
-            .dropdown__wrap
+            div(class="dropdown__wrap " + wrap + options.state)
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
                         span.dropdown__type взрослые

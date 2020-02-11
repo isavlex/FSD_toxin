@@ -1,0 +1,5 @@
+mixin like(options)
+    div(class="like like--" + options.state + " " + options.addClass)
+        div(class="like__heart like__heart--" + options.state)
+        .like__number= options.number
+        

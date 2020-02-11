@@ -15,9 +15,11 @@ body {
     font-size: 16px;
 }
 
-  *,
-  *::before,
-  *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after { 
+    box-sizing: border-box; 
+}
 
 @include make-wrap();
 @include get-adaptive($grid-breakpoints, $wrap-max-widths);
@@ -44,6 +46,10 @@ body {
 
 .mr-125 {
     margin-right: 125px;
+}
+
+.mr-10 {
+    margin-right: 10px;
 }
 
 .mw-350 {

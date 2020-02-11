@@ -1,0 +1,21 @@
+.rate {
+    display: inline-flex;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.rate__star {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url(../../icons/star.svg) no-repeat 50%;
+    &:hover ~ .rate__star {
+        background: url(../../icons/empty-star.svg) no-repeat 50%;
+    }
+    &--empty{
+        background: url(../../icons/empty-star.svg) no-repeat 50%;
+        &:hover {
+            background: url(../../icons/star.svg) no-repeat 50%;
+        }
+    }
+}

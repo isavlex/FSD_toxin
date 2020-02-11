@@ -1,5 +1,10 @@
 mixin switches(options)
-    if options.mode === "list"
+    //{"mode": "list", "heading": "string", "list": ["array strings"], "checked": [array numbers]}
+    //{"mode": "buttons", "heading": "string", "buttons": ["array strings"], "checked": [array numbers]}
+    //{"mode": "toggles", "heading": "string", "toggles": ["array strings"], "checked": [array numbers]}
+    //{"mode": "rich", "heading": "string", "buttonsHead": ["array strings"], "buttonsText": ["array strings"], "checked": [array numbers]}
+    //{"mode": "radio", "heading": "string", "buttons": ["array strings"], "name": "string"}
+    if options.mode === "list" 
         .switches
             -let state = "hidden"
             if options.state == "shown"
@@ -17,7 +22,7 @@ mixin switches(options)
                             label.switches__label
                                 input(type="checkbox" class="switches__input" checked= isChecked)
                                 span.checbox-list__text= item
-    else if options.mode === "buttons"
+    else if options.mode === "buttons" 
         .switches
             .switches__head
                 h3.heading-mb100= options.heading
@@ -31,7 +36,8 @@ mixin switches(options)
                         label.switches__label
                             input(type="checkbox" class="switches__input" checked= isChecked)
                             span.checbox-list__text= button
-    else if options.mode === "toggles"
+    
+    else if options.mode === "toggles" 
         .switches
             .switches__head
                 h3.heading-mb100= options.heading
@@ -45,7 +51,8 @@ mixin switches(options)
                         label.switches__toggle-label
                             input(type="checkbox" class="switches__toggle-input" checked= isChecked)
                             span.switches__toggle-text= toggle
-    else if options.mode === "rich"
+    
+    else if options.mode === "rich" 
         .switches
             .switches__head
                 h3.heading-mb100= options.heading
@@ -64,7 +71,8 @@ mixin switches(options)
                             input(type="checkbox" class="switches__rich-input" checked= isChecked)
                             p.switches__rich-head.heading-mb75= head
                             span.checbox-list__rich-text= text
-    else if options.mode === "radio"
+    
+    else if options.mode === "radio" 
         .switches
             .switches__head
                 h3.heading-mb100= options.heading

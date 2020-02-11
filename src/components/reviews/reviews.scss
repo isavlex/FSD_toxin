@@ -1,0 +1,29 @@
+.reviews {
+    // display: flex;
+    max-width: 711px;
+}
+
+.reviews__img {
+    display: flex;
+    
+}
+
+.reviews__pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.reviews__text {
+    display: flex;
+}
+
+.reviews__like {
+    display: flex;
+    justify-content: center;
+    min-width: 48px;
+    margin-right: 10px;
+}

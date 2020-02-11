@@ -1,0 +1,9 @@
+mixin rate(num)
+    .rate
+        -let state = ""
+        -for(let i = 0; i < 5; i++) {
+            if (i) === num
+                -state =  " rate__star--empty"
+            div(class="rate__star" + state)
+        -}
+

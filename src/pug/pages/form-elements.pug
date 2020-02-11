@@ -58,6 +58,32 @@ block content
                 .row.mb100-indent
                     .col
                         +text-field("subscription")
+                
+                        
+            .col.mw-350.mr-125
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "buttons", "heading": "Checkbox Buttons", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "radio", "heading": "Radio buttons", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "toggles", "heading": "Toggle", "toggles": ["Получать спецпредложения", "Получать спецпредложения"], "checked": [0]})
+                .row.mb20-indent
+                    .col
+                        h3.mb5-indent.heading-mb100 like button
+                        +like({"number": 2, "addClass": "mr-10"})
+                        +like({"number": 12, "state": "liked"})
+                .row.mb100-indent
+                    .col
+                        h3.mb5-indent.heading-mb100 rate button
+                        +rate(4)
+                        +rate(5)
+                
+            .col.mw-350.ml-125
+        .row
+            .col.mw-350.mr-125
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 dropdown
@@ -80,29 +106,36 @@ block content
                 .row.mb40-indent
                     .col
                         +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
+                
+            .col.mw-350.mr-125
+                .row.mb5-indent
+                    .col
+                        h3.heading-mb100 Dropdown
+                    .col.text-r
+                        h3.heading-mn50 Default
+                .row.mb100-indent
+                    .col
+                        +dropdown({"mode": "guests", "addClass": "guests", "state": "active"})
+                .row.mb20-indent
+                    .col
+                        +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
+            .col.mw-350.mr-125
+        .row
+            .col.mw-350.mr-125
                 .row.mb20-indent
                     .col
                         +features({"img": "smile", "heading": "Комфорт", "text": "Шумопоглощающие стены"})
                 .row.mb20-indent
                     .col
                         +features({"img": "build", "heading": "Удобство", "text": "Окно в каждой из спален"})
-                        
-            .col.mw-350.mr-125
-                .row.mb20-indent
+            .col
+                .row
                     .col
-                        +switches({"mode": "buttons", "heading": "Checkbox Buttons", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
-                .row.mb20-indent
-                    .col
-                        +switches({"mode": "radio", "heading": "Radio buttons", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
-                .row.mb20-indent
-                    .col
-                        +switches({"mode": "toggles", "heading": "Toggle", "toggles": ["Получать спецпредложения", "Получать спецпредложения"], "checked": [0]})
-                .row.mb20-indent
-                    .col
-                        +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
+                        +reviews({"img": "man.png", "heading": "Мурад Сарафанов", "when": "5 дней назад", "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+            
 
 
-            .col.mw-350.ml-125
+            
 
 
 block scripts

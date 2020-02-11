@@ -1,6 +1,6 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
-import { showHide } from "../../components/switches/switches";
+// import { showHide } from "../../components/switches/switches";
 
 
 // toggleClass(".dropdown__heading", "dropdown__wrap--active");

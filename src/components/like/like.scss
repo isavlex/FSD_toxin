@@ -1,0 +1,62 @@
+.like {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-family: $monsterrat;
+    font-style: normal;
+    text-align: center;
+    color: $dark-shade-25;
+    width: 40px;
+    height: 20px;
+    background-clip: padding-box !important;
+    position: relative;
+    background: $white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 10px;
+    cursor: pointer;
+    &--liked {      
+        border: solid 1px transparent;
+        color: $purple;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+        }
+    }
+
+}
+.like__heart {
+    width: 20px;
+    height: 20px;
+    background: url(../../icons/empty-heart.svg) no-repeat 50% 48%;
+    &--liked {
+        background: url(../../icons/heart.svg) no-repeat 50% 48%;
+    }
+}
+// .like__heart {
+//     position: relative;
+//     width: 100px; 
+//     height: 80px;
+//     &::before, &::after {
+//         content: "";
+//         position: absolute; 
+//         left: 50px; 
+//         top: 0;
+//         width: 50px; 
+//         height: 80px;
+//         background: #EE4156;
+//         border-radius: 50px 50px 0 0;
+//         transform: rotate(-45deg); 
+//         transform-origin: 0 100%;
+//     }
+
+//     &::after {
+//         left: 0;
+//         transform: rotate(45deg); 
+//         transform-origin: 100% 100%;
+//     }
+// }
