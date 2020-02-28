@@ -8,6 +8,7 @@
 @import '../../components/components';
 
 
+
 body {
     min-height: 100vh;
     line-height: 1.5;
@@ -25,7 +26,7 @@ body {
 @include get-adaptive($grid-breakpoints, $wrap-max-widths);
 
 .content {
-    padding: 65px 7.3% 0;
+    padding: 65px 7.3% 119px;
 }
 
 .mb100-indent {
@@ -44,8 +45,12 @@ body {
     margin-bottom: 20px;
 }
 
-.mr-125 {
-    margin-right: 125px;
+.mr-95 {
+    margin-right: 95px;
+}
+
+.mr-40 {
+    margin-right: 40px;
 }
 
 .mr-10 {

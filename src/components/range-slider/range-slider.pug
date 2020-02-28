@@ -1,0 +1,9 @@
+mixin range-slider(options)
+    .range-slider
+        .range-slider__head
+            h3.heading-mb100= options.head
+            .range-slider__values
+                h3(id= options.id + "__vfirst" class="heading-mn50")
+                h3.heading-mn50 &nbsp;-&nbsp;
+                h3(id= options.id + "__vsecond" class="heading-mn50")
+        div(id= options.id)

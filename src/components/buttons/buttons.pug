@@ -1,0 +1,9 @@
+mixin buttons(options)
+    -let prefix = " button--"
+    -let mode, state = ""
+    if options.mode
+        -mode = prefix + options.mode
+    if options.state
+        -state = prefix + options.state
+
+    button(class="button" + mode + state)= options.value

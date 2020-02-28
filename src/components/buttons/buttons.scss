@@ -1,0 +1,46 @@
+
+.button {
+    font-family: $monsterrat;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: $white;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.button--purpled {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    &:hover {
+        opacity: 0.5;
+    }
+
+}
+
+.button--contoured {
+    position: relative;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: $purple;
+    z-index: 1;
+    &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        top: 2px;
+        left: 2px;
+        background-color: $white;
+        border-radius: 22px;
+        z-index: -1;
+    } 
+}
+
+.button--deactivated {
+    opacity: 0.5;
+}

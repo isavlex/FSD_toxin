@@ -1,5 +1,7 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
+
+import noUiSlider from "nouislider/distribute/nouislider";
 // import { showHide } from "../../components/switches/switches";
 
 
@@ -13,6 +15,29 @@ import { howMany } from "../../components/dropdown/dropdown";
 //     showHideToggleClass: "switches__list--shown" 
 // });
 howMany();
+
+let myRangeSlider = document.getElementById("fe-rslider");
+
+let snapValues = [
+    document.getElementById("fe-rslider__vfirst"),
+    document.getElementById("fe-rslider__vsecond")
+]
+
+
+noUiSlider.create(myRangeSlider, {
+    start: [5000, 10000],
+    snap: false,
+    step: 100,
+    connect: true,
+    range: {
+        'min': 900,
+        'max': 15000
+    }
+})
+
+myRangeSlider.noUiSlider.on('update', function (values, handle) {
+    snapValues[handle].innerHTML = Math.round(values[handle]) + "₽";
+});
 
 $(document).ready(function () {
     $('.dropdown__heading--from-reservation, .dropdown__heading--to-reservation').datepicker({

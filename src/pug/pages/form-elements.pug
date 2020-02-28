@@ -8,7 +8,7 @@ block content
     +header()
     .wrap.content
         .row
-            .col.mw-350.mr-125
+            .col.mw-350.mr-95
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Text Field
@@ -60,7 +60,7 @@ block content
                         +text-field("subscription")
                 
                         
-            .col.mw-350.mr-125
+            .col.mw-350.mr-40
                 .row.mb20-indent
                     .col
                         +switches({"mode": "buttons", "heading": "Checkbox Buttons", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
@@ -81,9 +81,22 @@ block content
                         +rate(4)
                         +rate(5)
                 
-            .col.mw-350.ml-125
+            .col.mw-350
+                .row.mb20-indent
+                    .col
+                        +range-slider({"head": "Range Slider", "id": "fe-rslider"})
+                .row.mb20-indent
+                    .col
+                        h3.heading-mb100 Buttons
+                        +buttons({"mode": "purpled", "value": "CLICK ME"})
+                        +buttons({"mode": "purpled", "state": "deactivated", "value": "CLICK ME"})
+                .row.mb20-indent
+                    .col
+                        +buttons({"mode": "contoured", "value": "CLICK ME"})
+                        +buttons({"mode": "contoured", "state": "deactivated", "value": "CLICK ME"})
+
         .row
-            .col.mw-350.mr-125
+            .col.mw-350.mr-95
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 dropdown
@@ -107,7 +120,7 @@ block content
                     .col
                         +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
                 
-            .col.mw-350.mr-125
+            .col.mw-350.mr-95
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Dropdown
@@ -119,9 +132,9 @@ block content
                 .row.mb20-indent
                     .col
                         +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
-            .col.mw-350.mr-125
+            .col.mw-350.mr-95
         .row
-            .col.mw-350.mr-125
+            .col.mw-350.mr-95
                 .row.mb20-indent
                     .col
                         +features({"img": "smile", "heading": "Комфорт", "text": "Шумопоглощающие стены"})

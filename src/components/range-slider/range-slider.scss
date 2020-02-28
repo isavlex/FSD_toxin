@@ -1,0 +1,52 @@
+@import 'nouislider';
+.range-slider__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.range-slider__values {
+    display: flex;
+}
+
+//noUislider
+
+.noUi-horizontal {
+    height: 6px;
+}
+
+.noUi-target {
+    border-radius: 3px;
+    border: 1px solid $dark-shade-25;
+}
+
+.noUi-connects {
+    overflow: visible;
+}
+
+.noUi-connect {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    height: 6px;
+    top: -1px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    top: -6px;
+    right: -7px;
+    cursor: pointer;
+    &::before {
+        display: none;
+    }
+    &::after {
+        display: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}

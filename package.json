@@ -7,7 +7,9 @@
     "bootstrap": "^4.4.1",
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
+    "nouislider": "^14.1.1",
     "popper.js": "^1.16.0",
+    "range-slider": "^1.0.2",
     "text-mask": "0.0.2",
     "text-mask-addons": "^3.8.0",
     "vanilla-text-mask": "^5.1.1"
@@ -23,7 +25,7 @@
   "scripts": {
     "start": "parcel serve src/pug/pages/$npm_package_main --open",
     "predeploy": "rm -rf dist/* && parcel build src/pug/pages/index.pug --public-url ./",
-    "deploy": "npm run predeploy && gh-pages -d dist"
+    "deploy": "yarn run predeploy && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
