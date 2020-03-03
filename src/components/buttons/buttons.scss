@@ -38,9 +38,34 @@
         background-color: $white;
         border-radius: 22px;
         z-index: -1;
-    } 
+    }
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.button--big {
+    min-width: 320px;
+    background-image: url(../../icons/arrow-white.svg), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-repeat: no-repeat;
+    background-position: 94% 48%;
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .button--deactivated {
     opacity: 0.5;
+}
+
+.button--empty {
+    color: $purple;
+    padding: 0;
+    background-color: transparent;
+    &:hover {
+        color: $dark-shade-50;
+    }
+    &:active {
+        color: $dark-shade-75;
+    }
 }

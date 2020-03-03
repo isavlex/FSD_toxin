@@ -1,0 +1,45 @@
+.paginationjs {
+    font-family: $monsterrat;
+    font-size: 0.75rem;
+    
+}
+
+.paginationjs-pages ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.paginationjs-next a, .paginationjs-ellipsis a, .paginationjs-page a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: $dark-shade-50;
+    border-radius: 50%;
+}
+
+.paginationjs-page a {
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.paginationjs-next a {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.paginationjs-pages .active a {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: $white;
+    font-weight: 700;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.paginationjs-next.disabled a {
+    opacity: 0.5;
+}
+

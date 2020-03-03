@@ -87,14 +87,26 @@ block content
                         +range-slider({"head": "Range Slider", "id": "fe-rslider"})
                 .row.mb20-indent
                     .col
-                        h3.heading-mb100 Buttons
+                        h3.heading-mb100.mb20-indent Buttons
                         +buttons({"mode": "purpled", "value": "CLICK ME"})
                         +buttons({"mode": "purpled", "state": "deactivated", "value": "CLICK ME"})
                 .row.mb20-indent
                     .col
                         +buttons({"mode": "contoured", "value": "CLICK ME"})
                         +buttons({"mode": "contoured", "state": "deactivated", "value": "CLICK ME"})
-                        +buttons({"mode": "contoured", "state": "deactivated", "value": "CLICK ME"})
+                .row.mb20-indent
+                    .col
+                        +buttons({"mode": "empty", "value": "click me"})
+                        +buttons({"mode": "empty", "value": "click me"})
+                .row.mb20-indent
+                    .col
+                        +buttons({"mode": "big", "value": "перейти к оплате"})
+                .row.mb20-indent
+                    .col
+                        h3.heading-mb100 pagination
+                        //- +pagination()
+                        #example-pagination
+                        #data-container
 
         .row
             .col.mw-350.mr-95
