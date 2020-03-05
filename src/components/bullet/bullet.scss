@@ -1,0 +1,16 @@
+.bullet {
+    font-family: $monsterrat;
+    color: $dark-shade-75;
+    font-size: 0.87rem;
+    line-height: 1.5rem;
+}
+
+.bullet__list {
+    padding-left: 18px;
+    max-width: 307px;
+    list-style-image: url(../../icons/bullet.svg);
+}
+
+.bullet__item {
+    margin-bottom: 10px;
+}

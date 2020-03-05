@@ -133,7 +133,7 @@ block content
                     .col
                         +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
                 
-            .col.mw-350.mr-95
+            .col.mw-350.mr-40
                 .row.mb5-indent
                     .col
                         h3.heading-mb100 Dropdown
@@ -145,7 +145,16 @@ block content
                 .row.mb20-indent
                     .col
                         +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
-            .col.mw-350.mr-95
+            .col.mw-350
+                .row.mb5-indent
+                    .col
+                        h3.heading-mb100 Dropdown
+                .row.mb100-indent
+                    .col
+                        +dropdown({"mode": "guests", "addClass": "guests", "state": "active"})
+                .row
+                    .col
+                        +bullet({"heading": "Bullet list", "items": ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
         .row
             .col.mw-350.mr-95
                 .row.mb20-indent
