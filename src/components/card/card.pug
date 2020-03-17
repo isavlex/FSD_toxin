@@ -1,0 +1,9 @@
+mixin card(options)
+    if options.mode == "selection"
+        section.card
+            h1.heading-q= options.head
+            +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
+            .card__guests
+                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests"})
+            .card__wrap-btn
+                +buttons({"mode": "big", "value": "подобрать номер"})

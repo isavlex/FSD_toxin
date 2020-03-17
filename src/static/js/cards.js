@@ -1,17 +1,17 @@
 require("../../components/calendar/datepicker.js");
-
+import { howMany } from "../../components/dropdown/dropdown";
+howMany();
 $(document).ready(function () {
-    $('.selection__choice--arrival').datepicker({
-        altField: '.selection__choice--departure',
+    $('.dropdown__heading--from-reservation').datepicker({
+        altField: '.dropdown__heading--to-reservation',
         multipleDatesSeparator: ' ',
         range: true,
         clearButton: true,
         confirmButton: true,
         onSelect: function (fd, dates, inst) {
-            var firstInput = $('.selection__choice--arrival');
+            var firstInput = $('.dropdown__heading--from-reservation');
             var secondInput = $(this.altField);
             var first, second;
-
             dates.forEach(function (date, index) {
 
                 let rightDate = (date.getDate() < 10) ? ('0' + date.getDate()) : date.getDate();
@@ -27,8 +27,8 @@ $(document).ready(function () {
             secondInput.val(second);
         }
     });
-    $('.selection__choice--departure').datepicker({
-        altField: '.selection__choice--arrival',
+    $('.dropdown__heading--to-reservation').datepicker({
+        altField: '.dropdown__heading--from-reservation',
         multipleDatesSeparator: ' ',
         range: true,
         clearButton: true,
@@ -36,9 +36,9 @@ $(document).ready(function () {
         position: "bottom right",
         onSelect: function (fd, dates, inst) {
             var firstInput = $(this.altField);
-            var secondInput = $('.selection__choice--departure');
+            var secondInput = $('.dropdown__heading--to-reservation');
             var first, second;
-
+            console.log($(this))
             dates.forEach(function (date, index) {
 
                 let rightDate = (date.getDate() < 10) ? ('0' + date.getDate()) : date.getDate();

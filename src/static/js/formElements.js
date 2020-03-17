@@ -3,14 +3,17 @@ import { howMany } from "../../components/dropdown/dropdown";
 import pagination from "paginationjs/dist/pagination";
 import noUiSlider from "nouislider/distribute/nouislider";
 
-howMany();
 
-//start-pagination
+//dropdown-guests
+howMany("guests-example");
+howMany("guests-example2");
+howMany("guests-example3");
 
+//dropdown-options
+howMany("options-example");
+howMany("options-example2");
 
-
-//end-pagination
-
+//paginations
 function simpleTemplating(data) {
     var html = '<ul>';
     $.each(data, function(index, item){
@@ -59,20 +62,19 @@ noUiSlider.create(myRangeSlider, {
 myRangeSlider.noUiSlider.on('update', function (values, handle) {
     snapValues[handle].innerHTML = Math.round(values[handle]) + "₽";
 });
-//end-nouislider
 
 $(document).ready(function () {
-    $('.dropdown__heading--from-reservation, .dropdown__heading--to-reservation').datepicker({
+    //dropdown range
+    $('.dropdown__heading--from-reservation').datepicker({
         altField: '.dropdown__heading--to-reservation',
+        multipleDatesSeparator: ' ',
         range: true,
         clearButton: true,
         confirmButton: true,
-        
         onSelect: function (fd, dates, inst) {
             var firstInput = $('.dropdown__heading--from-reservation');
             var secondInput = $(this.altField);
             var first, second;
-
             dates.forEach(function (date, index) {
 
                 let rightDate = (date.getDate() < 10) ? ('0' + date.getDate()) : date.getDate();
@@ -86,16 +88,43 @@ $(document).ready(function () {
 
             firstInput.val(first);
             secondInput.val(second);
-            
-        },
-        
+        }
     });
-    $('.dropdown--super-filter .dropdown__heading--filtered').datepicker({
-        dateFormat: "dd M",
+    $('.dropdown__heading--to-reservation').datepicker({
+        altField: '.dropdown__heading--from-reservation',
+        multipleDatesSeparator: ' ',
         range: true,
-        multipleDatesSeparator: " - ",
         clearButton: true,
         confirmButton: true,
-        
-    });
+        position: "bottom right",
+        onSelect: function (fd, dates, inst) {
+            var firstInput = $(this.altField);
+            var secondInput = $('.dropdown__heading--to-reservation');
+            var first, second;
+            console.log($(this))
+            dates.forEach(function (date, index) {
+
+                let rightDate = (date.getDate() < 10) ? ('0' + date.getDate()) : date.getDate();
+                let rightMonth = ((date.getMonth() + 1) < 10) ? ('0' + (date.getMonth() + 1)) : date.getMonth() + 1;
+                if (index == 0) {
+                    first = rightDate + "." + rightMonth + "." + date.getFullYear();
+                } else {
+                    second = rightDate + "." + rightMonth + "." + date.getFullYear();
+                }
+            })
+
+            firstInput.val(first);
+            secondInput.val(second);
+        }
+    })
+    //dropdown filter
+    $('.dropdown__heading--filtered').datepicker({
+        range: true,
+        monthsShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+        multipleDatesSeparator: ' - ',
+        dateFormat: 'dd M',
+    })
 });
+
+
+

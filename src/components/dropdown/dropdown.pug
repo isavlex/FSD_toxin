@@ -1,58 +1,64 @@
 mixin dropdown(options)
-    -var wrap = options.state ? "dropdown__wrap--" : ""
+    -var wrap = options.state ? "dropdown__wrap--active" : ""
     if options.mode == "guests"
-        div(class="dropdown dropdown--" + options.addClass tabindex="0" )       
-            .dropdown__heading                    
-                span.dropdown__total-amount.paragraph Сколько гостей
-            div(class="dropdown__wrap " + wrap + options.state)
+        hgroup.heads
+            h3.heading-mb100= options.head
+            h3.heading-mn50= options.head2
+        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-guests)       
+            div(class="dropdown__heading" data-heading)
+                span(class="dropdown__total-amount paragraph" data-amount) Количество гостей
+            div(class="dropdown__wrap " + wrap)
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
                         span.dropdown__type взрослые
-                        .dropdown__count.dropdown__adults 
-                            .dropdown__minus.dropdown__minus--deactive
-                            span.dropdown__number 0
-                            .dropdown__plus
+                        div(class="dropdown__count dropdown__adults" data-adults) 
+                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            span(class="dropdown__number" data-number) 0
+                            div(class="dropdown__plus" data-plus)
                     li.dropdown__item
                         span.dropdown__type дети
-                        .dropdown__count.dropdown__children 
-                            .dropdown__minus.dropdown__minus--deactive
-                            span.dropdown__number 0
-                            .dropdown__plus
+                        div(class="dropdown__count dropdown__children" data-children) 
+                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            span(class="dropdown__number" data-number) 0
+                            div(class="dropdown__plus" data-plus)
                     li.dropdown__item
                         span.dropdown__type младенцы
-                        .dropdown__count.dropdown__babies 
-                            .dropdown__minus.dropdown__minus--deactive
-                            span.dropdown__number 0
-                            .dropdown__plus
+                        div(class="dropdown__count dropdown__babies" data-babies)
+                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            span(class="dropdown__number" data-number) 0
+                            div(class="dropdown__plus" data-plus)
                     
                     .dropdown__actions.heading-mb100
-                        a(class="dropdown__clear dropdown__clear--off pink-link") очистить
-                        a(class="dropdown__apply pink-link") применить
+                        a(class="dropdown__clear dropdown__clear--off pink-link" data-clear) очистить
+                        a(class="dropdown__apply pink-link" data-apply) применить
                     input(type="hidden" name="" value="")
     else if options.mode == "options"
-        div(class="dropdown dropdown--" + options.addClass tabindex="0" )
-            .dropdown__heading                    
-                span.dropdown__total-amount.paragraph спальни, кровати
-            div(class="dropdown__wrap " + wrap + options.state)
+        hgroup.heads.heads--options
+            h3.heading-mb100= options.head
+            h3.heading-mn50= options.head2
+        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-options )
+            div(class="dropdown__heading" data-heading)                    
+                span(class="dropdown__total-amount paragraph" data-amount) спальни, кровати
+            div(class="dropdown__wrap " + wrap)
                     ul.dropdown__list.heading-mb100
                         li.dropdown__item
                             span.dropdown__type спальни
-                            .dropdown__count.dropdown__bedrooms 
-                                .dropdown__minus.dropdown__minus--deactive
+                            div(class="dropdown__count dropdown__bedrooms" data-bedrooms) 
+                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
                                 span.dropdown__number 0
-                                .dropdown__plus
+                                div(class="dropdown__plus" data-plus)
                         li.dropdown__item
                             span.dropdown__type кровати
-                            .dropdown__count.dropdown__beds
-                                .dropdown__minus.dropdown__minus--deactive
+                            div(class="dropdown__count dropdown__beds" data-beds)
+                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
                                 span.dropdown__number 0
-                                .dropdown__plus
+                                div(class="dropdown__plus" data-plus)
                         li.dropdown__item
                             span.dropdown__type ванные комнаты
-                            .dropdown__count.dropdown__bathrooms
-                                .dropdown__minus.dropdown__minus--deactive
+                            div(class="dropdown__count dropdown__bathrooms" data-bathrooms)
+                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
                                 span.dropdown__number 0
-                                .dropdown__plus
+                                div(class="dropdown__plus" data-plus)
     else if options.mode == "range"
         div(class="dropdown dropdown--range")
             div(class="dropdown__from")

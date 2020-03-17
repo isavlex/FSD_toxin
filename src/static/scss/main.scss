@@ -75,7 +75,14 @@ body {
     padding: 0;
 }
 
+.heads {
+    display: flex;
+    justify-content: space-between;
+}
 
+.heads--options {
+    max-width: 266px;
+}
 
 .v-center {
     display: flex;

@@ -25,14 +25,9 @@ block content
                 .row.mb40-indent
                     .col
                         +text-field("text", "text-field__input--focus")
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 Dropdown
-                    .col.text-r
-                        h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +dropdown({"mode": "guests", "addClass": "guests"})
+                        +dropdown({"mode": "guests", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "guests", "id": "guests-example"})
                         
                 .row.mb5-indent
                     .col
@@ -110,22 +105,12 @@ block content
 
         .row
             .col.mw-350.mr-95
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 dropdown
-                    .col.text-r
-                        h3.heading-mn50 Default
                 .row.mb20-indent
                     .col
-                        +dropdown({"mode": "options", "addClass": "options"})
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 dropdown
-                    .col.text-r
-                        h3.heading-mn50 Default
+                        +dropdown({"mode": "options", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "options", "id": "options-example"})
                 .row.mb20-indent
                     .col
-                        +dropdown({"mode": "options", "addClass": "options", "state": "active"})
+                        +dropdown({"mode": "options", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "options", "state": "active", "id": "options-example2"})
                 .row.mb20-indent
                     .col
                         +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3]})
@@ -134,24 +119,16 @@ block content
                         +switches({"mode": "list", "heading": "expandable checkbox list", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
                 
             .col.mw-350.mr-40
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 Dropdown
-                    .col.text-r
-                        h3.heading-mn50 Default
                 .row.mb100-indent
                     .col
-                        +dropdown({"mode": "guests", "addClass": "guests", "state": "active"})
+                        +dropdown({"mode": "guests", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "guests", "state": "active", "id": "guests-example2"})
                 .row.mb20-indent
                     .col
                         +switches({"mode": "rich", "heading": "rich Checkbox Buttons", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
             .col.mw-350
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 Dropdown
                 .row.mb100-indent
                     .col
-                        +dropdown({"mode": "guests", "addClass": "guests", "state": "active"})
+                        +dropdown({"mode": "guests", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "guests", "state": "active", "id": "guests-example3"})
                 .row
                     .col
                         +bullet({"heading": "Bullet list", "items": ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
