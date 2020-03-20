@@ -1,9 +1,16 @@
 mixin card(options)
-    if options.mode == "selection"
-        section.card
+    section.card
+        if options.mode == "selection"
             h1.heading-q= options.head
             +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
             .card__guests
-                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests"})
+                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": "cards__example"})
             .card__wrap-btn
                 +buttons({"mode": "big", "value": "подобрать номер"})
+        if options.mode == "registration"
+            h1.heading-q= options.head
+            +text-field({"mode": "text", "placeholder": "Имя"})
+            +text-field({"mode": "text", "placeholder": "Фамилия"})
+            +switches({"mode": "radio", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
+            +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": "example__dob", "head": "дата рождения"})
+

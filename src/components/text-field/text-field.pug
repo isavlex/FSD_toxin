@@ -1,14 +1,18 @@
-mixin text-field(mod, addclass, mask)
-    if mod == "email"
-        .text-field
-            input(type="email" placeholder="Email" class="text-field__input paragraph " + addclass)
-    else if mod == "text"
-        .text-field
-            input(type="text" placeholder="Type text here" class="text-field__input paragraph " + addclass)
-    else if mod == "mask"
-        .text-field
-            input(type="text" readonly="readonly" placeholder= mask class="text-field__input text-field__input--masked paragraph " + addclass)
-    else if mod == "subscription"
-        .text-field
-            input(type="email" placeholder="Email" class="text-field__input text-field__input--signed paragraph " + addclass)
+mixin text-field(options)
+    -let addClass = options.addClass ? options.addClass : ""
+    .text-field
+            if options.head && options.head2 
+                hgroup.heads
+                    h3.heading-mb100= options.head
+                    h3.heading-mn50= options.head2
+            else if options.head
+                h3.heading-mb100= options.head 
+            if options.mode == "email"
+                input(type="email" placeholder="Email" class="text-field__input paragraph " + addclass)
+            else if options.mode == "text"
+                input(type="text" placeholder= options.placeholder class="text-field__input paragraph " + addclass)
+            else if options.mode == "mask"
+                input(type="text" placeholder= options.mask class="text-field__input text-field__input--masked paragraph " + addClass)
+            else if options.mode == "subscription"
+                input(type="email" placeholder="Email" class="text-field__input text-field__input--signed paragraph " + addclass)
     

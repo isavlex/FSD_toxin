@@ -1,6 +1,10 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
-howMany();
+import {setMask} from "../../components/text-field/textFieldMask";
+
+setMask('example__dob');
+
+howMany("cards__example");
 $(document).ready(function () {
     $('.dropdown__heading--from-reservation').datepicker({
         altField: '.dropdown__heading--to-reservation',

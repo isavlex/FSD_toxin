@@ -1,4 +1,5 @@
 require("../../components/calendar/datepicker.js");
+import {setMask} from "../../components/text-field/textFieldMask";
 import { howMany } from "../../components/dropdown/dropdown";
 import pagination from "paginationjs/dist/pagination";
 import noUiSlider from "nouislider/distribute/nouislider";

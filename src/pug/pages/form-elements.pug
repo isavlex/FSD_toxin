@@ -9,34 +9,19 @@ block content
     .wrap.content
         .row
             .col.mw-350.mr-95
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 Text Field
-                    .col.text-r
-                        h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +text-field("email")
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 Text Field
-                    .col.text-r
-                        h3.heading-mn50 Hover / Focus
+                        +text-field({"mode": "email", "head": "text-field", "head2": "DEFAULT"})
                 .row.mb40-indent
                     .col
-                        +text-field("text", "text-field__input--focus")
+                        +text-field({"mode": "text", "addClass": "text-field__input--focus", "head": "text-field", "head2": "HOVER / FOCUS"})
                 .row.mb40-indent
                     .col
                         +dropdown({"mode": "guests", "head": "DROPDOWN", "head2": "DEFAULT", "addClass": "guests", "id": "guests-example"})
                         
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 masked text field
-                    .col.text-r
-                        h3.heading-mn50 Default
                 .row.mb40-indent
                     .col
-                        +text-field("mask", "", "ДД.ММ.ГГГГ")
+                        +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "head": "MASKED TEXT FIELD", "head2": "DEFAULT"})
                 .row.mb40-indent
                     .col
                         +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "Dropdown",  "rangeHead2": "Dropdown"})
@@ -47,12 +32,9 @@ block content
                 .row.mb40-indent
                     .col
                         +dropdown({"mode": "filter", "addClass": "super-filter"})
-                .row.mb5-indent
-                    .col
-                        h3.heading-mb100 subscription text field
                 .row.mb100-indent
                     .col
-                        +text-field("subscription")
+                        +text-field({"mode": "subscription", "head": "SUBSCRIPTION TEXT FIELD"})
                 
                         
             .col.mw-350.mr-40

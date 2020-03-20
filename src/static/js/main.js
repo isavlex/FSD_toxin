@@ -2,7 +2,7 @@ var jquery = require("jquery");
 window.$ = window.jQuery = jquery;
 
 
-import {setMask} from "../../components/text-field/textFieldMask";
+
 
 
 
