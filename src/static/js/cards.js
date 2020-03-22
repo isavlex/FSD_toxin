@@ -3,6 +3,7 @@ import { howMany } from "../../components/dropdown/dropdown";
 import {setMask} from "../../components/text-field/textFieldMask";
 
 setMask('example__dob');
+setMask('example__email', 'email');
 
 howMany("cards__example");
 $(document).ready(function () {

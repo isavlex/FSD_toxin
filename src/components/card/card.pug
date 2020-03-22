@@ -12,5 +12,15 @@ mixin card(options)
             +text-field({"mode": "text", "placeholder": "Имя"})
             +text-field({"mode": "text", "placeholder": "Фамилия"})
             +switches({"mode": "radio", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
-            +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": "example__dob", "head": "дата рождения"})
+            section.card__block
+                +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": "example__dob", "head": "дата рождения"})
+            section.card__block
+                +text-field({"mode": "email", "addClass": "example__email", "head": "данные для входа в сервис"})
+                +text-field({"mode": "pass"})
+                +switches({"mode": "toggles", "toggles": ["Получать спецпредложения"], "checked": []})
+                .card__wrap-btn
+                    +buttons({"mode": "big", "value": "перейти к оплате"})
+                .card__wrap-btn
+                    p.paragraph.black Уже есть аккаунт на Toxin
+                    +buttons({"mode": "contoured", "value": "войти"})
 

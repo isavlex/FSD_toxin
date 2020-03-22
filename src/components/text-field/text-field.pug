@@ -1,18 +1,20 @@
 mixin text-field(options)
-    -let addClass = options.addClass ? options.addClass : ""
+    -var addedClass = options.addClass ? options.addClass : ""
     .text-field
             if options.head && options.head2 
-                hgroup.heads
+                hgroup.flex-sb
                     h3.heading-mb100= options.head
                     h3.heading-mn50= options.head2
             else if options.head
                 h3.heading-mb100= options.head 
             if options.mode == "email"
-                input(type="email" placeholder="Email" class="text-field__input paragraph " + addclass)
+                input(type="email" placeholder="Email" class="text-field__input paragraph " + addedClass)
+            else if options.mode == "pass"
+                input(type="password" placeholder="Пароль" class="text-field__input paragraph " + addedClass)
             else if options.mode == "text"
-                input(type="text" placeholder= options.placeholder class="text-field__input paragraph " + addclass)
+                input(type="text" placeholder= options.placeholder class="text-field__input paragraph " + addedClass)
             else if options.mode == "mask"
-                input(type="text" placeholder= options.mask class="text-field__input text-field__input--masked paragraph " + addClass)
+                input(type="text" placeholder= options.mask class="text-field__input text-field__input--masked paragraph " + addedClass)
             else if options.mode == "subscription"
-                input(type="email" placeholder="Email" class="text-field__input text-field__input--signed paragraph " + addclass)
+                input(type="email" placeholder="Email" class="text-field__input text-field__input--signed paragraph " + addedClass)
     
