@@ -1,3 +1,9 @@
+//reset
+h1, h2, h3, li, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
 //size
 
 h1 {
@@ -13,7 +19,7 @@ h2 {
 h3 {
     font-size: 0.75rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
     line-height: 0.93rem;
 }
 
@@ -88,8 +94,39 @@ a {
 .paragraph-q {
     font-family: 'Quicksand', 'Arial', sans-serif;
     font-weight: 400;
+    color: $dark-shade-100;
 }
 
+//sizes
+
+.big {
+    font-size: 1.5rem;
+}
+
+.small {
+    font-size: 0.75rem;
+}
+
+//fonts
+
+.quicksand {
+    font-family: $main-font;
+}
+
+.montserrat {
+    font-family: $monsterrat;
+}
+
+//styles
+
+.bold {
+    font-weight: 700;
+    
+}
+
+.normal {
+    font-weight: 400;
+}
 
 //links
 
@@ -109,6 +146,10 @@ a {
 
 
 //colors
+
+.light-50 {
+    color: $dark-shade-50;
+}
 
 .black {
     color: #000000;

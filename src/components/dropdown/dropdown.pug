@@ -1,12 +1,13 @@
 mixin dropdown(options)
     -var wrap = options.state ? "dropdown__wrap--active" : ""
+    -var countGuests = options.valueGuests ? options.valueGuests : "Количество гостей"
     if options.mode == "guests"
         hgroup.heads
             h3.heading-mb100= options.head
             h3.heading-mn50= options.head2
         div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-guests)       
             div(class="dropdown__heading" data-heading)
-                span(class="dropdown__total-amount paragraph" data-amount) Количество гостей
+                span(class="dropdown__total-amount paragraph" data-amount)= countGuests
             div(class="dropdown__wrap " + wrap)
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
@@ -63,10 +64,10 @@ mixin dropdown(options)
         div(class="dropdown dropdown--range")
             div(class="dropdown__from")
                 h3.heading-mb100= options.rangeHead1
-                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + options.addClass)
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + options.addClass value= options.valueFrom)
             div(class="dropdown__to" + options.mode)
                 h3.heading-mb100= options.rangeHead2
-                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + options.addClass)
+                input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + options.addClass value= options.valueTo)
     else if options.mode == "filter"
         div(class="dropdown dropdown--filtered dropdown--" + options.addClass)
             input( readonly="readonly" spellcheck="false" placeholder="ДД М - ДД М" class="dropdown__heading dropdown__heading--filtered")

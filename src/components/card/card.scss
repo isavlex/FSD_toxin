@@ -10,6 +10,40 @@
     margin-top: 20px;
 }
 
+.card__item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__service {
+    display: flex;
+    max-width: 236px;
+}
+
+.card__info {
+    cursor: pointer;
+    margin-left: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $monsterrat;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: $dark-shade-25;
+    min-width: 20px;
+    max-width: 20px;
+    height: 20px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 50%;   
+}
+
+.card__doted {
+    border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+    flex-basis: 58%;
+    margin-bottom: 4px;
+}
+
 .card__choose-days {
     display: flex;
     justify-content: space-between;
@@ -38,15 +72,15 @@
 }
 
 
-.card__guests {
-    margin-top: 20px;
-    
-}
-
 .card__guest {
     width: 100%;
     max-width: 100%;
     background: url(../../icons/expand.svg) 96% 55% no-repeat;
+}
+
+.card__fsb {
+    display: flex;
+    justify-content: space-between;
 }
 
 .card__wrap-btn {

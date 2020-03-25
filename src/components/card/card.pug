@@ -2,16 +2,18 @@ mixin card(options)
     section.card
         if options.mode == "selection"
             h1.heading-q= options.head
-            +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
-            .card__guests
+            section.card__block
+                +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
+            .card__block
                 +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": "cards__example"})
             .card__wrap-btn
                 +buttons({"mode": "big", "value": "подобрать номер"})
         if options.mode == "registration"
             h1.heading-q= options.head
-            +text-field({"mode": "text", "placeholder": "Имя"})
-            +text-field({"mode": "text", "placeholder": "Фамилия"})
-            +switches({"mode": "radio", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
+            section.card__block
+                +text-field({"mode": "text", "placeholder": "Имя"})
+                +text-field({"mode": "text", "placeholder": "Фамилия"})
+                +switches({"mode": "radio", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
             section.card__block
                 +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": "example__dob", "head": "дата рождения"})
             section.card__block
@@ -23,4 +25,37 @@ mixin card(options)
                 .card__wrap-btn
                     p.paragraph.black Уже есть аккаунт на Toxin
                     +buttons({"mode": "contoured", "value": "войти"})
+        if options.mode == "total"
+            .card__fsb
+                p.paragraph-q.bold № <span class="big card__number">888</span> <a href="#" class="pink-link">люкс</a>
+                p.paragraph.light-50.bold <span class="card__cost">9 990</span>₽ <span class="small normal">в сутки</span>
+            section.card__block
+                +dropdown({"mode": "range", "addClass": options.totalRangeClass, "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД", "valueFrom": options.valueFrom, "valueTo": options.valueTo})
+            section.card__block
+                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": options.totalGuestsId, "valueGuests": options.valueGuests})
+            .card__block
+                .card__item
+                    p.paragraph <span class="card__cost">9 990</span>₽ х <span class="card__total-days">4</span> суток
+                    p.paragraph <span class="card__total-cost">39 960₽
+                .card__item
+                    .card__service
+                        p.paragraph Сбор за услуги: скидка <span class="card__discount">2 179</span>₽
+                        .card__info
+                            <span>i</span>
+                    p.paragraph <span class="card__tax">0</span>₽
+                .card__item
+                    .card__service
+                        p.paragraph Сбор за дополнительные услуги
+                        .card__info
+                            <span>i</span>
+                    p.paragraph <span class="card__extra-tax">300</span>₽
+            .card__block
+                .card__item
+                    h2.heading-q Итого
+                    .card__doted
+                    h2.heading-q 38 081₽
+            .card__wrap-btn
+                    +buttons({"mode": "big", "value": "забронировать"})
+
+
 
