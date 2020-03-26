@@ -5,7 +5,7 @@ mixin card(options)
             section.card__block
                 +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
             .card__block
-                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": "cards__example"})
+                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": options.id})
             .card__wrap-btn
                 +buttons({"mode": "big", "value": "подобрать номер"})
         if options.mode == "registration"
@@ -15,9 +15,9 @@ mixin card(options)
                 +text-field({"mode": "text", "placeholder": "Фамилия"})
                 +switches({"mode": "radio", "buttons": ["Мужчина", "Женщина"], "name": "sex"})
             section.card__block
-                +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": "example__dob", "head": "дата рождения"})
+                +text-field({"mode": "mask", "mask": "ДД.ММ.ГГГГ", "addClass": options.maskAddClass, "head": "дата рождения"})
             section.card__block
-                +text-field({"mode": "email", "addClass": "example__email", "head": "данные для входа в сервис"})
+                +text-field({"mode": "email", "addClass": options.emailAddClass, "head": "данные для входа в сервис"})
                 +text-field({"mode": "pass"})
                 +switches({"mode": "toggles", "toggles": ["Получать спецпредложения"], "checked": []})
                 .card__wrap-btn
@@ -56,6 +56,16 @@ mixin card(options)
                     h2.heading-q 38 081₽
             .card__wrap-btn
                     +buttons({"mode": "big", "value": "забронировать"})
+        if options.mode == "login"
+            h1.heading-q= options.head
+            section.card__block
+                +text-field({"mode": "email", "addClass": options.emailAddClass})
+                +text-field({"mode": "pass"})
+            .card__wrap-btn
+                +buttons({"mode": "big", "value": "войти"})
+            .card__wrap-btn
+                    p.paragraph.black Нет аккаунта на Toxin?
+                    +buttons({"mode": "contoured", "value": "войти"})
 
 
 

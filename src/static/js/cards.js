@@ -4,6 +4,7 @@ import {setMask} from "../../components/text-field/textFieldMask";
 
 setMask('example__dob');
 setMask('example__email', 'email');
+setMask('example__email2', 'email');
 
 howMany("cards__example");
 howMany("cards__example22");

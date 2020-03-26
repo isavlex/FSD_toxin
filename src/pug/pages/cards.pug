@@ -10,12 +10,14 @@ block content
         .row
             .col
                 .row.mb40-indent
-                    +card({"mode": "selection", "head": "Найдём номера под ваши пожелания"})
+                    +card({"mode": "selection", "head": "Найдём номера под ваши пожелания", "id": "cards__example"})
                 .row
-                    +card({"mode": "registration", "head": "Регистрация аккаунта"})
+                    +card({"mode": "registration", "head": "Регистрация аккаунта", "emailAddClass": "example__email", "maskAddClass": "example__dob"})
             .col
                 .row.mb40-indent
                     +card({"mode": "total", "totalGuestsId": "cards__example22", "totalRangeClass": "cards-example","valueFrom": "25.03.2020", "valueTo": "29.03.2020", "valueGuests": "3 гостя"})
+                .row
+                    +card({"mode": "login", "head": "Войти", "emailAddClass": "example__email2"})
 
             .col
                 +calendar()
