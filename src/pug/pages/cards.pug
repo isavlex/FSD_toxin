@@ -20,7 +20,12 @@ block content
                     +card({"mode": "login", "head": "Войти", "emailAddClass": "example__email2"})
 
             .col
-                +calendar()
+                .row.mb40-indent
+                    +calendar()
+                .row.mb40-indent
+                    +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
+                .row.mb40-indent
+                    +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example2", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
 
                 
                 

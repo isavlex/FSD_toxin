@@ -1,0 +1,25 @@
+mixin number(options)
+    div(class="number" id= options.id)
+        .number__slider
+            .number__controls
+                .number__left
+                .number__right
+            .number__photos
+                each photo in options.photos
+                    .number__photo
+                        img(src="../../static/img/numbers/" + photo, alt="Фото номера " + options.number)
+            .number__nav
+                each dot in options.photos
+                    .number__dot
+        .number__body
+            .number__block
+                p.paragraph-q.bold №
+                    span.big= options.number
+                    if options.rate === 5
+                        a(href="#" class="pink-link")  люкс
+                p.paragraph.light-50.bold= options.price
+                    span.small.normal  в сутки
+            .number__block.number__block--abobe-line
+                +rate(options.rate)
+                p.paragraph.bold= options.reviews
+                    span.normal  Отзывов  

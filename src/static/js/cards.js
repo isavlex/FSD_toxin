@@ -1,14 +1,20 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
 import {setMask} from "../../components/text-field/textFieldMask";
+import { tns } from '../../../node_modules/tiny-slider/src/tiny-slider.js';
 
+//masks
 setMask('example__dob');
 setMask('example__email', 'email');
 setMask('example__email2', 'email');
 
+
+//dropdowns
 howMany("cards__example");
 howMany("cards__example22");
 
+
+//datepickers
 $(document).ready(function () {
     //reservation
     $('.dropdown__heading--from-reservation').datepicker({
@@ -116,4 +122,22 @@ $(document).ready(function () {
             secondInput.val(second);
         }
     })
+});
+
+//tiny-sliders
+let exampleSlideOne = tns({
+    container: '#number__example .number__photos',
+    items: 1,
+    slideBy: 'page',
+    controlsText: ['', ''],
+    controlsContainer: '#number__example .number__controls',
+    navContainer: '#number__example .number__nav',
+});
+let exampleSlideTwo = tns({
+    container: '#number__example2 .number__photos',
+    items: 1,
+    slideBy: 'page',
+    controlsText: ['', ''],
+    controlsContainer: '#number__example2 .number__controls',
+    navContainer: '#number__example2 .number__nav',
 });
