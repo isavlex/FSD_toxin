@@ -1,0 +1,32 @@
+mixin menu(options)
+    if options.mode == "gorizontal"
+        ul.menu
+            each link, anchor in options.items
+                li.menu__item
+                    if options.activeItem == anchor
+                        a(href= link class="menu__link menu__link--active")= anchor
+                    else if typeof link == "object"
+                        label.menu__sub-label
+                            input(type="checkbox" class="menu__sub-checkbox")
+                            span(class="menu__link menu__link--sub")= anchor
+                            ul.menu__sub
+                                each sublink, subanchor in link
+                                    li.menu__subitem
+                                        a(href= sublink class="menu__sublink")= subanchor
+                    else
+                        a(href= link class="menu__link")= anchor
+    else if options.mode == "vertical"
+        section.v-nav
+            h3.heading-mb100= options.head
+            ul.v-nav__menu
+                each link, anchor in options.items
+                    li.v-nav__item
+                        a(href= link class="v-nav__link")= anchor
+    else if options.mode == "social"
+        ul.social
+            each link, anchor in options.items
+                li.social__item
+                    a(href= link class="social__link")
+                        img(src="../../icons/" + anchor, class="social__img")
+
+

@@ -1,5 +1,19 @@
-mixin header()
-    header.wrap
-            .row
-                .col
-                    a(href="#" class="header__logo")
+mixin header(options)
+    if options.mode == "ui"
+        header.wrap
+                .row
+                    .col
+                        a(href="/" class="header__logo")
+    if options.mode == "site"
+        header.header
+            a(href="/" class="header__logo-link")
+                img(src="../../icons/logo-text.svg", alt="logo" class="header__logo-img")
+            nav.header__menu
+                +menu({"mode": "gorizontal", "items": options.items, "activeItem": options.activeItem, })
+                if !options.registered
+                    .header__login
+                        +buttons({"mode": "contoured", "value": "Login"})
+                        +buttons({"mode": "purpled", "value": "REGISTER"})
+                else
+                    .hader__login
+                        p.header__person= options.registered

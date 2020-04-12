@@ -1,6 +1,13 @@
 
 .text-field {
     margin-bottom: 10px;
+    font-size: 0.87rem;
+    &--subscription {
+        position: relative;
+        padding: 11px 0px 11px 15px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 4px;
+    }
 }
 
 .text-field__input {
@@ -41,4 +48,29 @@
         max-width: 267px;
         background: url(./../../icons/arrow-forward.svg) no-repeat 95%;
     }
+}
+
+.text-field__form {
+    
+}
+
+.text-field__subscription {
+    border: 0;
+    outline: 0;
+    max-width: 276px;
+    &::placeholder {
+        color: $dark-shade-25;
+    }
+}
+
+.text-field__submit {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 22px);
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    width: 44px;
+    height: 44px;
+    background: url(./../../icons/arrow-forward.svg) no-repeat 50%;
 }
