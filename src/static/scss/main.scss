@@ -114,6 +114,31 @@ body {
     padding: 1.3rem 1rem 0 1rem;
 }
 
+.all-site-wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.main {
+    padding: 0 8.75rem;
+}
+
+.main--landing {
+    position: relative;
+    background: url(../img/landing/landing-background.jpg) no-repeat;
+    min-height: 891px;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.main__landing-footer {
+    position: absolute;
+    right: 8.75rem;
+    bottom: 20px;
+    max-width: 300px;
+    text-align: right;
+}
+
 @media only screen and (max-width: $tablet) {
     .md-mb-indent {
         margin-bottom: 67px;

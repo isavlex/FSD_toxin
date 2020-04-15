@@ -10,8 +10,8 @@ setMask('example__email2', 'email');
 
 
 //dropdowns
-howMany("cards__example");
-howMany("cards__example22");
+howMany("dropdown--example");
+howMany("dropdown--example22");
 
 
 //datepickers

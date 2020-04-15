@@ -5,7 +5,7 @@ mixin dropdown(options)
         hgroup.heads
             h3.heading-mb100= options.head
             h3.heading-mn50= options.head2
-        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-guests)       
+        div(class="dropdown dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-guests)       
             div(class="dropdown__heading" data-heading)
                 span(class="dropdown__total-amount paragraph" data-amount)= countGuests
             div(class="dropdown__wrap " + wrap)

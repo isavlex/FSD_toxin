@@ -3,7 +3,7 @@ mixin card(options)
         if options.mode == "selection"
             h1.heading-q= options.head
             section.card__block
-                +dropdown({"mode": "range", "addClass": "reservation", "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
+                +dropdown({"mode": "range", "addClass": options.rangeAddClass, "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
             .card__block
                 +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": options.id})
             .card__wrap-btn

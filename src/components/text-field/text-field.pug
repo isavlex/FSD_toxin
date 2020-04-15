@@ -16,6 +16,6 @@ mixin text-field(options)
             else if options.mode == "mask"
                 input(type="text" placeholder= options.mask class="text-field__input text-field__input--masked paragraph " + addedClass)
             else if options.mode == "subscription"
-                input(type="email" placeholder="Your email address" class="text-field__subscription paragraph " + addedClass)
+                input(type="email" placeholder="Email" class="text-field__subscription paragraph " + addedClass)
                 button(type="submit" class="text-field__submit")
     

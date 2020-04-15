@@ -12,8 +12,8 @@ mixin header(options)
                 +menu({"mode": "gorizontal", "items": options.items, "activeItem": options.activeItem, })
                 if !options.registered
                     .header__login
-                        +buttons({"mode": "contoured", "value": "Login"})
-                        +buttons({"mode": "purpled", "value": "REGISTER"})
+                        +buttons({"mode": "contoured", "value": options.buttonLogin})
+                        +buttons({"mode": "purpled", "value": options.buttonRegister})
                 else
                     .hader__login
                         p.header__person= options.registered

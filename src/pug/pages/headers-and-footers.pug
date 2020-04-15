@@ -8,6 +8,9 @@ block varibles
     -var secondFooterItems = {"Who we are": "#", "Our team": "#", "Careers": "#", "Investors": "#", }
     -var thirdFooterItems = {"Documentation": "#", "Community": "#", "Get in Touch": "#"}
     -var aboutFooter = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+    -var copyrightFooter = "Copyright © 2018 Toxin UI Kit. All rights reserved."
+    -var subscribeTextFooter = "Receive our latest news and promotions in your inbox!"
+
 
 block content
     .mb40-indent
@@ -21,7 +24,7 @@ block content
                 +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": "Cosmin Negoita"})
         .row.mb40-indent
             .col
-                +footer({"mode": "complex", "about": aboutFooter, "firstHead": "Navigation",  "firstItems": firstFooterItems, "secondHead": "ABOUT US", "secondItems": secondFooterItems, "thirdHead":  "Support", "thirdItems": thirdFooterItems})
+                +footer({"mode": "complex", "about": aboutFooter, "firstHead": "Navigation",  "firstItems": firstFooterItems, "secondHead": "ABOUT US", "secondItems": secondFooterItems, "thirdHead":  "Support", "thirdItems": thirdFooterItems, "subscribeHead": "Subscribe to our newsletter", "subscribeText": subscribeTextFooter, "copyright": copyrightFooter})
         .row.mb40-indent
             .col
                 +footer({"mode": "simple", "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."})
