@@ -1,11 +1,12 @@
 mixin card(options)
-    section.card
+    -var isActive = options.deactive ? " card--deactive" : ""
+    section(class="card " + "card--" + options.mode + isActive id= options.id)
         if options.mode == "selection"
             h1.heading-q= options.head
             section.card__block
                 +dropdown({"mode": "range", "addClass": options.rangeAddClass, "rangeHead1": "ПРИБЫТИЕ",  "rangeHead2": "ВЫЕЗД"})
             .card__block
-                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": options.id})
+                +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": options.guestsId})
             .card__wrap-btn
                 +buttons({"mode": "big", "value": "подобрать номер"})
         if options.mode == "registration"

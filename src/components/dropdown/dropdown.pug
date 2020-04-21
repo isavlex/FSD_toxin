@@ -5,61 +5,61 @@ mixin dropdown(options)
         hgroup.heads
             h3.heading-mb100= options.head
             h3.heading-mn50= options.head2
-        div(class="dropdown dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-guests)       
-            div(class="dropdown__heading" data-heading)
-                span(class="dropdown__total-amount paragraph" data-amount)= countGuests
+        div(class="dropdown dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-action="guests")       
+            div(class="dropdown__heading" data-action="heading")
+                span(class="dropdown__total-amount paragraph" data-action="amount")= countGuests
             div(class="dropdown__wrap " + wrap)
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
                         span.dropdown__type взрослые
-                        div(class="dropdown__count dropdown__adults" data-adults) 
-                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
-                            span(class="dropdown__number" data-number) 0
-                            div(class="dropdown__plus" data-plus)
+                        div(class="dropdown__count dropdown__adults" data-action="adults") 
+                            div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
+                            span(class="dropdown__number" data-action="number") 0
+                            div(class="dropdown__plus" data-action="plus")
                     li.dropdown__item
                         span.dropdown__type дети
-                        div(class="dropdown__count dropdown__children" data-children) 
-                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
-                            span(class="dropdown__number" data-number) 0
-                            div(class="dropdown__plus" data-plus)
+                        div(class="dropdown__count dropdown__children" data-action="children") 
+                            div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
+                            span(class="dropdown__number" data-action="number") 0
+                            div(class="dropdown__plus" data-action="plus")
                     li.dropdown__item
                         span.dropdown__type младенцы
-                        div(class="dropdown__count dropdown__babies" data-babies)
-                            div(class="dropdown__minus dropdown__minus--deactive" data-minus)
-                            span(class="dropdown__number" data-number) 0
-                            div(class="dropdown__plus" data-plus)
+                        div(class="dropdown__count dropdown__babies" data-action="babies")
+                            div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
+                            span(class="dropdown__number" data-action="number") 0
+                            div(class="dropdown__plus" data-action="plus")
                     
                     .dropdown__actions.heading-mb100
-                        a(class="dropdown__clear dropdown__clear--off pink-link" data-clear) очистить
-                        a(class="dropdown__apply pink-link" data-apply) применить
+                        a(class="dropdown__clear dropdown__clear--off pink-link" data-action="clear") очистить
+                        a(class="dropdown__apply pink-link" data-action="apply") применить
                     input(type="hidden" name="" value="")
     else if options.mode == "options"
         hgroup.heads.heads--options
             h3.heading-mb100= options.head
             h3.heading-mn50= options.head2
-        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-options )
-            div(class="dropdown__heading" data-heading)                    
-                span(class="dropdown__total-amount paragraph" data-amount) спальни, кровати
+        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-action="options" )
+            div(class="dropdown__heading" data-action="heading")                    
+                span(class="dropdown__total-amount paragraph" data-action="amount") спальни, кровати
             div(class="dropdown__wrap " + wrap)
                     ul.dropdown__list.heading-mb100
                         li.dropdown__item
                             span.dropdown__type спальни
-                            div(class="dropdown__count dropdown__bedrooms" data-bedrooms) 
-                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            div(class="dropdown__count dropdown__bedrooms" data-action="bedrooms") 
+                                div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
                                 span.dropdown__number 0
-                                div(class="dropdown__plus" data-plus)
+                                div(class="dropdown__plus" data-action="plus")
                         li.dropdown__item
                             span.dropdown__type кровати
-                            div(class="dropdown__count dropdown__beds" data-beds)
-                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            div(class="dropdown__count dropdown__beds" data-action="beds")
+                                div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
                                 span.dropdown__number 0
-                                div(class="dropdown__plus" data-plus)
+                                div(class="dropdown__plus" data-action="plus")
                         li.dropdown__item
                             span.dropdown__type ванные комнаты
-                            div(class="dropdown__count dropdown__bathrooms" data-bathrooms)
-                                div(class="dropdown__minus dropdown__minus--deactive" data-minus)
+                            div(class="dropdown__count dropdown__bathrooms" data-action="bathrooms")
+                                div(class="dropdown__minus dropdown__minus--deactive" data-action="minus")
                                 span.dropdown__number 0
-                                div(class="dropdown__plus" data-plus)
+                                div(class="dropdown__plus" data-action="plus")
     else if options.mode == "range"
         div(class="dropdown dropdown--range")
             div(class="dropdown__from")

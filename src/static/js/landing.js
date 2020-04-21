@@ -1,5 +1,6 @@
 require("../../components/calendar/datepicker.js");
 import { howMany } from "../../components/dropdown/dropdown";
+import {setMask} from "../../components/text-field/textFieldMask";
 
 //datepickers
 $(document).ready(function () {
@@ -61,3 +62,33 @@ $(document).ready(function () {
 
 //dropdowns
 howMany("dropdown--landing");
+
+//masks
+setMask("text-field__subscription--catch", "email");
+
+//events
+
+
+function showHideCards () {
+    let headerLogin = document.querySelector(".header__login");
+    let cardLogin = document.querySelector(".card--login");
+    let cardRegister = document.querySelector(".card--register");
+    let cardSelection = document.querySelector(".card--selection");
+
+    function headerButtonsHandler (e) {
+        let action = e.target.dataset.action;
+
+        //click on loginButton
+        if (action == "login") {
+            // console.log(loginButton)
+            cardSelection.classList.toggle("card--deactive");
+            cardLogin.classList.toggle("card--deactive");
+        }
+        console.log(e.target.dataset)
+    }
+
+    headerLogin.addEventListener("click", headerButtonsHandler);
+    
+}
+
+showHideCards();

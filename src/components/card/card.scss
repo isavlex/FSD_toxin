@@ -4,6 +4,10 @@
     background-color: #FFFFFF;
     border-radius: 4px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+    &--deactive {
+        display: none;
+    }
 }
 
 .card__block {

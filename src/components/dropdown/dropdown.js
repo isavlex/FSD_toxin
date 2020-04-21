@@ -62,32 +62,29 @@ function howMany(idElement) {
 
     function quantity(e) {
         let text = "";
-        let dropdownCurrentMode = e.currentTarget.dataset;
-        let dropdownToggle = e.target.dataset.heading || e.target.dataset.amount;
-        let dropdownPlus = e.target.dataset.plus;
-        let dropdownMinus = e.target.dataset.minus;
+        let action = e.target.dataset.action;
+        let dropdownCurrentMode = e.currentTarget.dataset.action;
         let dropdownHead = e.currentTarget.querySelector('.dropdown__total-amount');
-        let curProperty = e.target.parentElement.dataset;
+        let curProperty = e.target.parentElement.dataset.action;
         let clearButton = e.currentTarget.querySelector('.dropdown__clear');
         let dropdownNumbers = e.currentTarget.querySelectorAll('.dropdown__number');
         let dropdownWrap = e.currentTarget.querySelector(".dropdown__wrap");
-        let clearButtonEvent = e.target.dataset.clear;
-        let applyButtonEvent = e.target.dataset.apply;
-        let totalAmount = e.currentTarget.dataset.guests ? dropdownProperties.guests : dropdownProperties.options;
+        let totalAmount = e.currentTarget.dataset.action == "guests" ? dropdownProperties.guests : dropdownProperties.options;
+
         //click on header
-        if (dropdownToggle) {           
+        if (action == "heading" || action == "amount") {           
             dropdownWrap.classList.toggle("dropdown__wrap--active");
         }
 
 
         //click on plus
-        if (dropdownPlus) {           
+        if (action == "plus") {           
             e.target.previousElementSibling.textContent++; 
             let curPropertyMinus = e.target.previousElementSibling.previousElementSibling;
-            
+            console.log(curProperty)
                 
             for (let key in totalAmount) {
-                if (curProperty.hasOwnProperty(key)) {
+                if (curProperty == key) {
                     totalAmount[key]++;
                     totalAmount.total++;
                     if (dropdownCurrentMode.options) {
@@ -106,7 +103,7 @@ function howMany(idElement) {
             }
         }
         //click on minus
-        if (dropdownMinus) {
+        if (action == "minus") {
             if (e.target.nextElementSibling.textContent == 1) {
                 e.target.classList.toggle('dropdown__minus--deactive');                
             }
@@ -114,7 +111,7 @@ function howMany(idElement) {
             if (e.target.nextElementSibling.textContent != 0) {
                 e.target.nextElementSibling.textContent--;
                 for (let key in totalAmount) {
-                    if (curProperty.hasOwnProperty(key)) {
+                    if (curProperty == key) {
                         totalAmount[key]--;
                         totalAmount.total--;
                         if (dropdownCurrentMode.options) {
@@ -138,7 +135,7 @@ function howMany(idElement) {
              
         }
         //click on clear
-        if (clearButtonEvent) {
+        if (action == "clear") {
             for (let key in totalAmount) {
                 totalAmount[key] = 0;
             }
@@ -150,7 +147,7 @@ function howMany(idElement) {
         }
 
         //click on apply
-        if (applyButtonEvent) {
+        if (action == "apply") {
             dropdownWrap.classList.toggle("dropdown__wrap--active");
         }
     }

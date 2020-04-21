@@ -6,4 +6,4 @@ mixin buttons(options)
     if options.state
         -state = prefix + options.state
 
-    button(class="button" + mode + state)= options.value
+    button(class="button" + mode + state data-action= options.dataAction)= options.value

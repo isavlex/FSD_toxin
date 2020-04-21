@@ -13,12 +13,15 @@ block varibles
 
 block content
     .all-site-wrap
-        +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": false, "buttonLogin": "Войти", "buttonRegister": "Зарегистрироваться"})
+        +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": false, "buttonLogin": "Войти", "buttonRegister": "Зарегистрироваться", "buttonLoginDataAction": "login", "buttonRegisterDataAction": "register"})
         main.main.main--landing
-            +card({"mode": "selection", "head": "Найдём номера под ваши пожелания", "rangeAddClass": "landing", "id": "landing", })
+            +card({"mode": "selection", "head": "Найдём номера под ваши пожелания", "rangeAddClass": "landing", "guestsId": "landing", })
+            .main__card-center
+                +card({"mode": "login", "id": "card--login-catch", "deactive": true, "head": "Войти", "emailAddClass": "text-field__input--email-login"})
+                +card({"mode": "registration", "id": "card--registration-catch","deactive": true,"head": "Регистрация аккаунта", "emailAddClass": "text-field__input--email-registration", "maskAddClass": "text-field__input--dob-registration"})
             .main__landing-footer
                 p.paragraph Лучшие номера для вашей работы, отдыха и просто вдохновения
-        +footer({"mode": "complex", "about": aboutFooter, "firstHead": "навигация",  "firstItems": firstFooterItems, "secondHead": "о нас", "secondItems": secondFooterItems, "thirdHead":  "Служба поддержки", "thirdItems": thirdFooterItems, "copyright": copyrightFooter, "subscribeHead": "Подписка","subscribeText": subscribeTextFooter})
+        +footer({"mode": "complex", "subscriptionClass": "text-field__subscription--catch", "about": aboutFooter, "firstHead": "навигация",  "firstItems": firstFooterItems, "secondHead": "о нас", "secondItems": secondFooterItems, "thirdHead":  "Служба поддержки", "thirdItems": thirdFooterItems, "copyright": copyrightFooter, "subscribeHead": "Подписка","subscribeText": subscribeTextFooter})
 
 
 
