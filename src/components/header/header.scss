@@ -1,14 +1,19 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
     padding: 15px 8.75rem;
     background-color: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    @include breakpoint-dfirst (desktop) {
+        padding: 15px 5.75rem;
+        position: relative;
+    }
 }
 
 .header__logo-link {
     display: inline-flex;
+    align-items: center;
 }
 
 .header__logo {
@@ -23,6 +28,19 @@
 .header__menu {
     display: flex;
     align-items: center;
+}
+
+.header__login {
+    @include breakpoint-dfirst (lg-tablet) {
+        display: none;
+    }
+}
+
+.header__login--active {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .header__login > .button:not(:last-child) {

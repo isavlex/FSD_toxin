@@ -25,7 +25,7 @@ mixin card(options)
                     +buttons({"mode": "big", "value": "перейти к оплате"})
                 .card__wrap-btn
                     p.paragraph.black Уже есть аккаунт на Toxin
-                    +buttons({"mode": "contoured", "value": "войти"})
+                    +buttons({"mode": "contoured", "value": "войти", "dataAction": "login"})
         if options.mode == "total"
             .card__fsb
                 p.paragraph-q.bold № <span class="big card__number">888</span> <a href="#" class="pink-link">люкс</a>
@@ -65,8 +65,8 @@ mixin card(options)
             .card__wrap-btn
                 +buttons({"mode": "big", "value": "войти"})
             .card__wrap-btn
-                    p.paragraph.black Нет аккаунта на Toxin?
-                    +buttons({"mode": "contoured", "value": "войти"})
+                p.paragraph.black Нет аккаунта на Toxin?
+                +buttons({"mode": "contoured", "value": "создать", "dataAction": "register"})
 
 
 

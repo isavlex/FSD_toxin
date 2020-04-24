@@ -8,7 +8,7 @@ mixin text-field(options)
             else if options.head
                 h3.heading-mb100= options.head 
             if options.mode == "email"
-                input(type="email" placeholder="Email" class="text-field__input paragraph " + addedClass)
+                input(type="text" placeholder="Email" class="text-field__input paragraph " + addedClass)
             else if options.mode == "pass"
                 input(type="password" placeholder="Пароль" class="text-field__input paragraph " + addedClass)
             else if options.mode == "text"

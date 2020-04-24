@@ -65,30 +65,61 @@ howMany("dropdown--landing");
 
 //masks
 setMask("text-field__subscription--catch", "email");
+setMask("text-field__input--email-login", "email");
+setMask("text-field__input--email-registration", "email");
 
-//events
 
-
+//cards
 function showHideCards () {
     let headerLogin = document.querySelector(".header__login");
     let cardLogin = document.querySelector(".card--login");
-    let cardRegister = document.querySelector(".card--register");
+    let cardRegister = document.querySelector(".card--registration");
     let cardSelection = document.querySelector(".card--selection");
 
-    function headerButtonsHandler (e) {
+    function logRegbuttonsClickrHandler (e) {
         let action = e.target.dataset.action;
 
         //click on loginButton
         if (action == "login") {
-            // console.log(loginButton)
-            cardSelection.classList.toggle("card--deactive");
-            cardLogin.classList.toggle("card--deactive");
+            if (cardSelection.classList.contains("card--deactive")) {
+                cardRegister.classList.add("card--deactive");
+                cardLogin.classList.remove("card--deactive");
+            } else {
+                cardSelection.classList.toggle("card--deactive");
+                cardLogin.classList.toggle("card--deactive");
+            }
+            
         }
-        console.log(e.target.dataset)
+        //click on register
+        else if (action == "register") {
+            if (cardSelection.classList.contains("card--deactive")) {
+                cardLogin.classList.add("card--deactive");
+                cardRegister.classList.remove("card--deactive");
+            } else {
+                cardSelection.classList.toggle("card--deactive");
+                cardRegister.classList.toggle("card--deactive");
+            }
+        }
     }
 
-    headerLogin.addEventListener("click", headerButtonsHandler);
+
+    headerLogin.addEventListener("click", logRegbuttonsClickrHandler);
+    cardLogin.addEventListener("click", logRegbuttonsClickrHandler);
+    cardRegister.addEventListener("click", logRegbuttonsClickrHandler);
     
 }
 
 showHideCards();
+
+//menu
+function showMenu () {
+    let burger = document.querySelector(".burger");
+    console.log(burger)
+    function burgerHandler (e) {
+        let burgerLayers = document.querySelector(".burger__layers");
+        burgerLayers.classList.toggle("burger__layers--disclosed");
+    }
+    burger.addEventListener("click", burgerHandler);
+}
+
+showMenu();

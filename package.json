@@ -1,7 +1,7 @@
 {
   "name": "isavlex",
   "version": "1.0.0",
-  "main": "landing.pug",
+  "main": "headers-and-footers.pug",
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "bootstrap": "^4.4.1",
