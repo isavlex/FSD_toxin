@@ -15,4 +15,4 @@ function showMenu () {
     burger.addEventListener("click", burgerHandler);
 }
 
-showMenu();
+export {showMenu};

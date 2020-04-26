@@ -1,4 +1,5 @@
 require("../../components/calendar/datepicker.js");
+import { showMenu } from "../../components/header/header";
 import { howMany } from "../../components/dropdown/dropdown";
 import {setMask} from "../../components/text-field/textFieldMask";
 
@@ -110,16 +111,4 @@ function showHideCards () {
 }
 
 showHideCards();
-
-//menu
-function showMenu () {
-    let burger = document.querySelector(".burger");
-    console.log(burger)
-    function burgerHandler (e) {
-        let burgerLayers = document.querySelector(".burger__layers");
-        burgerLayers.classList.toggle("burger__layers--disclosed");
-    }
-    burger.addEventListener("click", burgerHandler);
-}
-
 showMenu();

@@ -8,6 +8,8 @@ mixin header(options)
         header.header
             a(href="/" class="header__logo-link")
                 img(src="../../icons/logo-text.svg", alt="logo" class="header__logo-img")
+            .burger
+                .burger__layers
             nav.header__menu
                 +menu({"mode": "gorizontal", "items": options.items, "activeItem": options.activeItem, })
                 if !options.registered

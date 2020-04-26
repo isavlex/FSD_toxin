@@ -6,14 +6,18 @@
     background-color: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     @include breakpoint-dfirst (desktop) {
-        padding: 15px 5.75rem;
+        padding: 15px $general-indent - 3;
         position: relative;
+    }
+    @include breakpoint-dfirst (phone) {
+        padding: 15px $general-indent - 6;
     }
 }
 
 .header__logo-link {
     display: inline-flex;
     align-items: center;
+    z-index: 100;
 }
 
 .header__logo {
@@ -28,11 +32,29 @@
 .header__menu {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.header__menu--active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .header__login {
     @include breakpoint-dfirst (lg-tablet) {
         display: none;
+        bottom: $general-indent - 3;
+    }
+
+    @include breakpoint-dfirst (lg-tablet) {
+        bottom: $general-indent - 6;
     }
 }
 
@@ -53,4 +75,59 @@
     font-family: $montserrat;
     font-weight: 400;
     color: $dark-shade-50;
+}
+
+//burger
+.burger {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+    cursor: pointer;
+    
+    @include breakpoint-dfirst (lg-tablet) {
+        display: inline-block;
+        right: $general-indent - 3;
+    }
+    @include breakpoint-dfirst (phone) {
+        right: $general-indent - 6;
+    }
+}
+
+.burger__layers {
+    $layer-height: 3px;
+    position: absolute;
+    width: 40px;
+    height: $layer-height;
+    top: 13.33px - $layer-height;
+    background-color: $dark-shade-75;
+    border-radius: 3px;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
+
+    &:before {
+        @extend .burger__layers;
+        content: "";
+        top: 8.89px;
+    }
+
+    &::after {
+        @extend .burger__layers;
+        content: "";
+        top: 17.78px;
+    }
+}
+
+.burger__layers--disclosed {
+    transform: translate(0, 10px) rotate(45deg);
+
+    &::before {
+        opacity: 0;
+    }
+
+    &::after {
+        transform: translate(0, -18px) rotate(-90deg);
+    }
 }

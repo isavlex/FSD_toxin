@@ -1,4 +1,5 @@
 mixin menu(options)
+    -var addModifier = options.modifier ? options.modifier : ""
     if options.mode == "gorizontal"
         ul.menu
             each link, anchor in options.items
@@ -15,8 +16,6 @@ mixin menu(options)
                                         a(href= sublink class="menu__sublink")= subanchor
                     else
                         a(href= link class="menu__link")= anchor
-        .burger
-            .burger__layers
     else if options.mode == "vertical"
         section.v-nav
             h3.heading-mb100= options.head
@@ -25,7 +24,7 @@ mixin menu(options)
                     li.v-nav__item
                         a(href= link class="v-nav__link")= anchor
     else if options.mode == "social"
-        ul.social
+        ul(class="social " + addModifier)
             each link, anchor in options.items
                 li.social__item
                     a(href= link class="social__link" target="_blank")

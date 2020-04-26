@@ -1,3 +1,5 @@
+$font-size: 0.87rem;
+
 //gorizontal
 .menu {
     display: flex;
@@ -11,14 +13,6 @@
 
 .menu--active {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 .menu__item {
@@ -28,7 +22,7 @@
 
 .menu__link {
     font-family: $montserrat;
-    font-size: 0.87rem;
+    font-size: $font-size;
     text-transform: none;
     color: $dark-shade-50;
     cursor: pointer;
@@ -47,6 +41,10 @@
         padding-right: 20px;
         background: url(../../icons/expand.svg) no-repeat 100% 50%;
         user-select: none; 
+    }
+
+    @include breakpoint-dfirst (lg-tablet) {
+        font-size: $font-size * 1.5;
     }
 }
 
@@ -76,6 +74,10 @@
     &:hover {
         color: $dark-shade-75;
     }
+
+    @include breakpoint-dfirst (lg-tablet) {
+        font-size: $font-size * 1.5;
+    }
 }
 
 .menu__sub-checkbox {
@@ -96,11 +98,20 @@
 .v-nav__menu {
     list-style-type: none;
     margin-top: 21px;
-
+    @include breakpoint-dfirst (lg-tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+    }
 }
 
 .v-nav__item {
     margin-bottom: 20px;
+    @include breakpoint-dfirst (lg-tablet) {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
 }
 
 .v-nav__link {
@@ -118,58 +129,13 @@
 
 }
 
+.social--footer-complex {
+    @include breakpoint-dfirst (phone) {
+        margin-top: 20px;
+    }
+}
+
 .social__item {
     margin-right: 20px;
 }
 
-//burger
-.burger {
-    display: none;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    z-index: 100;
-    cursor: pointer;
-    
-    @include breakpoint-dfirst (lg-tablet) {
-        display: inline-block;
-        right: 5.75rem;
-    }
-}
-
-.burger__layers {
-    $layer-height: 3px;
-    position: absolute;
-    width: 40px;
-    height: $layer-height;
-    top: 13.33px - $layer-height;
-    background-color: $dark-shade-75;
-    border-radius: 3px;
-    transition-timing-function: ease;
-    transition-duration: 0.15s;
-    transition-property: transform;
-
-    &:before {
-        @extend .burger__layers;
-        content: "";
-        top: 8.89px;
-    }
-
-    &::after {
-        @extend .burger__layers;
-        content: "";
-        top: 17.78px;
-    }
-}
-
-.burger__layers--disclosed {
-    transform: translate(0, 10px) rotate(45deg);
-
-    &::before {
-        opacity: 0;
-    }
-
-    &::after {
-        transform: translate(0, -18px) rotate(-90deg);
-    }
-}
