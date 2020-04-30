@@ -12,7 +12,8 @@
   position: absolute;
   left: 0;
   top: 0;
-
+  width: 100%;
+  max-width: $datepickerWidth;
   @media print {
     display: none;
   }
@@ -27,12 +28,15 @@
   font-family: $datepickerFontFamily;
   font-size: $datepickerFontSize;
   color: map_get($datepickerTextColor, common);
-  width: $datepickerWidth;
+  width: 100%;
   position: absolute;
   left: -100000px;
   opacity: 0;
   transition: opacity $datepickerTransitionSpeed $datepickerTransitionEase, transform $datepickerTransitionSpeed $datepickerTransitionEase, left 0s $datepickerTransitionSpeed;
   z-index: $datepickerZIndex;
+  @include breakpoint-dfirst (380px) {
+    width: 93%;
+  }
 
   &.-from-top- {
     transform: translateY(-$datepickerTransitionOffset);
@@ -74,7 +78,9 @@
 .datepicker--content {
   box-sizing: content-box;
   padding:  9px  $datepickerPadding $datepickerPadding;
-
+  @include breakpoint-dfirst (380px) {
+    padding: $datepickerPadding / 2;
+  }
   .-only-timepicker- & {
     display: none;
   }

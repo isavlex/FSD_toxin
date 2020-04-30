@@ -10,7 +10,9 @@
   // border-bottom: 1px solid map_get($datepickerBorderColor, nav);
   min-height: $datepickerNavigationHeight;
   padding: $datepickerPadding;
-
+  @include breakpoint-dfirst (380px) {
+    padding: $datepickerPadding / 2;
+  }
   .-only-timepicker- & {
     display: none;
   }
@@ -81,7 +83,8 @@
 
 .datepicker--buttons {
   display: flex;
-  padding: 0 $datepickerPadding $datepickerPadding $datepickerPadding;
+  padding: $datepickerPadding / 2;
+  padding-top: 0;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.75rem;

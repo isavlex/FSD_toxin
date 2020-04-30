@@ -14,10 +14,11 @@
     }
     @include breakpoint-dfirst (desktop) {
         flex-wrap: wrap;
-        padding: 50px $general-indent - 3;
-    }
-    @include breakpoint-dfirst (tablet) {
         padding: 50px $general-indent - 6;
+    }
+    @include breakpoint-dfirst (phone) {
+        flex-wrap: wrap;
+        padding: 50px $general-indent - 8;
     }
 }
 
@@ -63,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     @include breakpoint-dfirst (desktop) {
-        padding: 23px $general-indent - 3;
+        padding: 23px $general-indent - 6;
     }
 
     @include breakpoint-dfirst (tablet) {
@@ -71,6 +72,7 @@
     }
 
     @include breakpoint-dfirst (phone) {
+        padding: 50px $general-indent - 8;
         text-align: center;
         flex-direction: column;
         justify-content: space-around;

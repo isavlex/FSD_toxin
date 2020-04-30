@@ -76,10 +76,12 @@ function showHideCards () {
     let cardLogin = document.querySelector(".card--login");
     let cardRegister = document.querySelector(".card--registration");
     let cardSelection = document.querySelector(".card--selection");
+    
+
 
     function logRegbuttonsClickrHandler (e) {
         let action = e.target.dataset.action;
-
+        let burger = document.querySelector(".burger");
         //click on loginButton
         if (action == "login") {
             if (cardSelection.classList.contains("card--deactive")) {
@@ -100,6 +102,10 @@ function showHideCards () {
                 cardSelection.classList.toggle("card--deactive");
                 cardRegister.classList.toggle("card--deactive");
             }
+        }
+        if (burger.classList.contains("burger--disclosed")) {
+            let closeEvent = new Event("click");
+            burger.dispatchEvent(closeEvent);
         }
     }
 

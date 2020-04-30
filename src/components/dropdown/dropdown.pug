@@ -65,7 +65,7 @@ mixin dropdown(options)
             div(class="dropdown__from")
                 h3.heading-mb100= options.rangeHead1
                 input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--from-" + options.addClass value= options.valueFrom)
-            div(class="dropdown__to" + options.mode)
+            div(class="dropdown__to")
                 h3.heading-mb100= options.rangeHead2
                 input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + options.addClass value= options.valueTo)
     else if options.mode == "filter"

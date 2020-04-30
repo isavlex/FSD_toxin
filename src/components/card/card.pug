@@ -1,6 +1,7 @@
 mixin card(options)
     -var isActive = options.deactive ? " card--deactive" : ""
-    section(class="card " + "card--" + options.mode + isActive id= options.id)
+    -var addClass = options.modifier ? " card--" + options.modifier : ""
+    section(class="card " + addClass + " card--" + options.mode + isActive id= options.id)
         if options.mode == "selection"
             h1.heading-q= options.head
             section.card__block

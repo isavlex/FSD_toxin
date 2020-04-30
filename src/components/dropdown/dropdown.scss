@@ -41,13 +41,16 @@
 
     &--range {
         background-position-x: 89%;
-        width: 150px;
+        max-width: 150px;
         color: $dark-shade-75;
         border: 1px solid $dark-shade-25;
         border-radius: 4px;
         &:focus {
             border: 1px solid $dark-shade-50;
             outline: none;
+        }
+        @include breakpoint-dfirst (phone) {
+            max-width: 138px;
         }
     }
     &--filtered {

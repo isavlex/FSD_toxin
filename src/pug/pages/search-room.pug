@@ -1,7 +1,7 @@
 extends ../layouts/main
 
 block varibles
-    -var pageTitle = 'Landing'
+    -var pageTitle = 'Search room'
     -var cssPath = '../../static/scss/main.scss'
     -var headerItems = {"О нас": "/", "Услуги": {"Submenu1": "#", "Super-Submenu2": "#", "Submenu3": "#",}, "Вакансии": "#", "Новости": "#", "Соглашения": {"Submenu1": "#", "Super-Submenu2": "#", "Submenu3": "#",}}
     -var firstFooterItems = {"О нас": "#", "Новости": "#", "Служба поддержки": "#", "Услуги": "#", }
@@ -10,20 +10,15 @@ block varibles
     -var aboutFooter = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     -var copyrightFooter = "Copyright © 2018 Toxin отель. Все права зачищены."
     -var subscribeTextFooter = "Получайте специальные предложения и новости сервиса"
-
 block content
     .all-site-wrap
         +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": false, "buttonLogin": "Войти", "buttonRegister": "Зарегистрироваться", "buttonLoginDataAction": "login", "buttonRegisterDataAction": "register"})
-        main.main.main--landing
-            +card({"mode": "selection", "head": "Найдём номера под ваши пожелания", "rangeAddClass": "landing", "guestsId": "landing", })
-            +card({"mode": "login", "modifier": "center", "id": "card--login-catch", "deactive": true, "head": "Войти", "emailAddClass": "text-field__input--email-login"})
-            +card({"mode": "registration", "modifier": "center", "id": "card--registration-catch","deactive": true,"head": "Регистрация аккаунта", "emailAddClass": "text-field__input--email-registration", "maskAddClass": "text-field__input--dob-registration"})
-            .main__landing-footer
-                p.paragraph Лучшие номера для вашей работы, отдыха и просто вдохновения
+        main.main.main--filter
+            aside.main__filters
+                
         +footer({"mode": "complex", "subscriptionClass": "text-field__subscription--catch", "about": aboutFooter, "firstHead": "навигация",  "firstItems": firstFooterItems, "secondHead": "о нас", "secondItems": secondFooterItems, "thirdHead":  "Служба поддержки", "thirdItems": thirdFooterItems, "copyright": copyrightFooter, "subscribeHead": "Подписка","subscribeText": subscribeTextFooter})
-
 
 
 block scripts
     script(src="../../static/js/main.js")
-    script(src="../../static/js/landing.js")
+    script(src="../../static/js/searchRoom.js")

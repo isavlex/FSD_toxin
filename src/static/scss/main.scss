@@ -122,6 +122,12 @@ body {
 
 .main {
     padding: 0 $general-indent;
+    @include breakpoint-dfirst (desktop) {
+        padding: 0 $general-indent - 6;
+    }
+    @include breakpoint-dfirst (phone) {
+        padding: 0;
+    }
 }
 
 .main--landing {
@@ -130,13 +136,10 @@ body {
     min-height: 891px;
     padding-top: 70px;
     padding-bottom: 20px;
-}
-
-.main__card-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;         
-    transform: translate(-50%, -50%);
+    @include breakpoint-dfirst (phone) {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .main__landing-footer {
@@ -145,6 +148,12 @@ body {
     bottom: 20px;
     max-width: 300px;
     text-align: right;
+    @include breakpoint-dfirst (desktop) {
+        right: $general-indent - 6;
+    }
+    @include breakpoint-dfirst (phone) {
+        right: $general-indent - 8;
+    }
 }
 
 @media only screen and (max-width: $tablet) {
