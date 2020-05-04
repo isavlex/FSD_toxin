@@ -30,6 +30,14 @@ body {
     padding: 65px 7.3% 119px;
 }
 
+.mb180-indent {
+    margin-bottom: 180px;
+}
+
+.mb120-indent {
+    margin-bottom: 120px;
+}
+
 .mb100-indent {
     margin-bottom: 100px;
 }
@@ -80,7 +88,15 @@ body {
     padding: 0;
 }
 
+.flex {
+    display: flex;
+}
+
 .flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+.heads {
     display: flex;
     justify-content: space-between;
 }
@@ -118,9 +134,11 @@ body {
 .all-site-wrap {
     max-width: 1440px;
     margin: 0 auto;
+    background-color: $white;
 }
 
 .main {
+    background-color: $white;
     padding: 0 $general-indent;
     @include breakpoint-dfirst (desktop) {
         padding: 0 $general-indent - 6;
@@ -154,6 +172,14 @@ body {
     @include breakpoint-dfirst (phone) {
         right: $general-indent - 8;
     }
+}
+
+.main__filters {
+    max-width: 267px;
+}
+
+.main__filter {
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: $tablet) {

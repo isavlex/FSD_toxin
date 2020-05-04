@@ -1,14 +1,18 @@
 mixin dropdown(options)
-    -var wrap = options.state ? "dropdown__wrap--active" : ""
+    -var dropdownElState = options.state ? "dropdown--active" : ""
+    -var dropdownWrapElState = options.state ? "dropdown__wrap--active" : ""
     -var countGuests = options.valueGuests ? options.valueGuests : "Количество гостей"
     if options.mode == "guests"
-        hgroup.heads
+        if options.head && options.head2
+            hgroup.heads
+                h3.heading-mb100= options.head
+                h3.heading-mn50= options.head2
+        else if options.head
             h3.heading-mb100= options.head
-            h3.heading-mn50= options.head2
-        div(class="dropdown dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-action="guests")       
+        div(class="dropdown " + dropdownElState + " dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-action="guests")       
             div(class="dropdown__heading" data-action="heading")
                 span(class="dropdown__total-amount paragraph" data-action="amount")= countGuests
-            div(class="dropdown__wrap " + wrap)
+            div(class="dropdown__wrap " + dropdownWrapElState)
                 ul.dropdown__list.heading-mb100
                     li.dropdown__item
                         span.dropdown__type взрослые
@@ -37,10 +41,10 @@ mixin dropdown(options)
         hgroup.heads.heads--options
             h3.heading-mb100= options.head
             h3.heading-mn50= options.head2
-        div(class="dropdown dropdown--" + options.addClass id= options.id tabindex="0" data-action="options" )
+        div(class="dropdown " + dropdownElState + " dropdown--" + options.addClass id="dropdown--" + options.id tabindex="0" data-action="options" )
             div(class="dropdown__heading" data-action="heading")                    
                 span(class="dropdown__total-amount paragraph" data-action="amount") спальни, кровати
-            div(class="dropdown__wrap " + wrap)
+            div(class="dropdown__wrap " + dropdownWrapElState)
                     ul.dropdown__list.heading-mb100
                         li.dropdown__item
                             span.dropdown__type спальни
@@ -69,6 +73,7 @@ mixin dropdown(options)
                 h3.heading-mb100= options.rangeHead2
                 input(type="text"  placeholder="ДД.ММ.ГГГГ" class="dropdown__heading dropdown__heading--range dropdown__heading--to-" + options.addClass value= options.valueTo)
     else if options.mode == "filter"
-        div(class="dropdown dropdown--filtered dropdown--" + options.addClass)
+        h3.heading-mb100= options.head
+        div(class="dropdown dropdown--filtered dropdown--" + options.addClass tabindex="0")
             input( readonly="readonly" spellcheck="false" placeholder="ДД М - ДД М" class="dropdown__heading dropdown__heading--filtered")
                 

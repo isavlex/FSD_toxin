@@ -6,13 +6,13 @@ import noUiSlider from "nouislider/distribute/nouislider";
 
 
 //dropdown-guests
-howMany("guests-example");
-howMany("guests-example2");
-howMany("guests-example3");
+howMany("dropdown--guests-example");
+howMany("dropdown--guests-example2");
+howMany("dropdown--guests-example3");
 
 //dropdown-options
-howMany("options-example");
-howMany("options-example2");
+howMany("dropdown--options-example");
+howMany("dropdown--options-example2");
 
 //paginations
 function simpleTemplating(data) {
@@ -36,7 +36,7 @@ $('#example-pagination').pagination({
     // callback: function(data, pagination) {
     //     // template method of yourself
     //     var html = simpleTemplating(data);
-    //     $('#data-container').html(html);
+    //     $('#data-container').$(document).ready(function () {html(html);
     // }
 })
 
