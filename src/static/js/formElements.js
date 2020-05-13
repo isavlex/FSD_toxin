@@ -3,8 +3,6 @@ import {setMask} from "../../components/text-field/textFieldMask";
 import { howMany } from "../../components/dropdown/dropdown";
 import pagination from "paginationjs/dist/pagination";
 import noUiSlider from "nouislider/distribute/nouislider";
-
-
 //dropdown-guests
 howMany("dropdown--guests-example");
 howMany("dropdown--guests-example2");
@@ -25,18 +23,19 @@ function simpleTemplating(data) {
 }
 
 $('#example-pagination').pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     locator: 'items',
-    totalNumber: 15,
-    pageSize: 1,
-    pageRange: 1,
+    // totalNumber: 15,
+    pageSize: 5,
+    // pageRange: 1,
     showPrevious: false,
     showNext: true,
     nextText: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white"/></svg>',
     // callback: function(data, pagination) {
-    //     // template method of yourself
-    //     var html = simpleTemplating(data);
-    //     $('#data-container').$(document).ready(function () {html(html);
+    //     // var html = simpleTemplating(data);
+    //     // $('#data-container').html(html);
+    //     // var fn = pug.compileFile('../../components/pagination-template/pagination-template.pug');
+    //     $('#data-container').html(fn());
     // }
 })
 

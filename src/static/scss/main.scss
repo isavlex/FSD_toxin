@@ -160,6 +160,24 @@ body {
     }
 }
 
+.main--compilation {
+    display: flex;
+    padding: 30px $general-indent 70px;
+}
+
+.main__rooms {
+    padding-left: 50px;
+    width: 100%;
+    max-width: 893px;
+}
+
+.main__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
 .main__landing-footer {
     position: absolute;
     right: $general-indent;
@@ -180,6 +198,11 @@ body {
 
 .main__filter {
     margin-bottom: 20px;
+}
+
+.main__pagination {
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: $tablet) {

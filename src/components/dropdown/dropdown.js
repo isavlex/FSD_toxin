@@ -102,7 +102,7 @@ function howMany(idElement) {
                     if (curProperty == key) {
                         totalAmount[key]--;
                         totalAmount.total--;
-                        if (dropdownCurrentMode.options) {
+                        if (dropdownCurrentMode == "options") {
                             text = `${totalAmount.bedrooms} ${getGraduation(totalAmount.bedrooms, numerals.options.bedrooms)}, ${totalAmount.beds} ${getGraduation(totalAmount.beds, numerals.options.beds)}, ${totalAmount.bathrooms} ${getGraduation(totalAmount.bathrooms, numerals.options.bathrooms)}`;
                             if (text.length > 21) {
                                 text = text.slice(0, 20) + "...";
