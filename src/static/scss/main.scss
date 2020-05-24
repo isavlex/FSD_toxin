@@ -162,13 +162,33 @@ body {
 
 .main--compilation {
     display: flex;
-    padding: 30px $general-indent 70px;
+    // padding: 30px $general-indent 70px;
+    padding-top: 30px;
+    padding-bottom: 70px;
 }
 
 .main__rooms {
     padding-left: 50px;
     width: 100%;
     max-width: 893px;
+    @include breakpoint-dfirst (lg-tablet) {
+        padding-left: 0;
+    }
+}
+
+.main__header {
+    @include breakpoint-dfirst (lg-tablet) {
+        text-align: center;
+    }
+}
+
+.main__filters-button {
+    display: none;
+    @include breakpoint-dfirst (lg-tablet) {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
 }
 
 .main__wrap {
@@ -176,6 +196,9 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top: 20px;
+    @include breakpoint-dfirst (desktop) {
+        justify-content: space-around;
+    }
 }
 
 .main__landing-footer {
@@ -193,11 +216,42 @@ body {
 }
 
 .main__filters {
+    @include breakpoint-dfirst (lg-tablet) {
+        display: none;
+    }
+}
+
+.main__filters--disclosed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__filters-wrap {
     max-width: 267px;
+    @include breakpoint-dfirst (lg-tablet) {
+        position: absolute;
+        top: 40px;
+    }
 }
 
 .main__filter {
     margin-bottom: 20px;
+}
+
+.main__filter--result {
+    display: none;
+    @include breakpoint-dfirst (lg-tablet) {
+        display: block;
+    }
 }
 
 .main__pagination {

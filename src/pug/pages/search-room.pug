@@ -15,39 +15,29 @@ block content
         +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": false, "buttonLogin": "Войти", "buttonRegister": "Зарегистрироваться", "buttonLoginDataAction": "login", "buttonRegisterDataAction": "register"})
         main.main.main--compilation
             aside.main__filters
-                .main__filter
-                    +dropdown({"mode": "filter", "head": "даты пребывания в отеле", "addClass": "search-room"})
-                .main__filter
-                    +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": "guests-search"})
-                .main__filter
-                    +range-slider({"head": "диапозон цены", "id": "search-rslider"})
-                    p.paragraph.small Стоимость за сутки пребывания в номере
-                .main__filter
-                    +switches({"mode": "buttons", "heading": "опции", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
-                .main__filter
-                    +switches({"mode": "rich", "heading": "Доступность", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
-                .main__filter
-                    +dropdown({"mode": "options", "head": "удобства номера", "addClass": "options", "id": "options-search"})
-                .main__filter
-                    +switches({"mode": "list", "heading": "дополнительные удобства", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3]})
+                .main__filters-wrap
+                    .main__filter
+                        +dropdown({"mode": "filter", "head": "даты пребывания в отеле", "addClass": "search-room"})
+                    .main__filter
+                        +dropdown({"mode": "guests", "head": "Гости", "addClass": "guests", "id": "guests-search"})
+                    .main__filter
+                        +range-slider({"head": "диапозон цены", "id": "search-rslider"})
+                        p.paragraph.small Стоимость за сутки пребывания в номере
+                    .main__filter
+                        +switches({"mode": "buttons", "heading": "опции", "buttons": ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], "checked": [1, 2]})
+                    .main__filter
+                        +switches({"mode": "rich", "heading": "Доступность", "buttonsHead": ["Широкий коридор", "Помощник для инвалидов"], "buttonsText": ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], "checked": [1]})
+                    .main__filter
+                        +dropdown({"mode": "options", "head": "удобства номера", "addClass": "options", "id": "options-search"})
+                    .main__filter
+                        +switches({"mode": "list", "heading": "дополнительные удобства", "list": ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"], "checked": [1, 2, 3], "state": "shown"})
+                    .main__filter.main__filter--result
+                        +buttons({"mode": "big", "value": "показать"})
             .main__rooms
-                h1.heading-q Номера, которые мы для вас подобрали
+                h1.main__header.heading-q Номера, которые мы для вас подобрали
+                .main__filters-button
+                    +buttons({"mode": "contoured", "value": "Фильтры", "dataAction": "filters"})
                 .main__wrap#data-container
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example2", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example3", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example4", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example5", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example6", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example7", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example8", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example9", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example10", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example11", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example12", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example13", "number": " 888", "price": 9900, "rate": 5, "reviews": 145})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example14", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
-                    //- +number({"photos": ["photo-number1.jpg", "photo-number2.jpg", "photo-number3.jpg"], "id": "number__example15", "number": " 840", "price": 9900, "rate": 4, "reviews": 65})
                 .main__pagination
                     #example-pagination
         +footer({"mode": "complex", "subscriptionClass": "text-field__subscription--catch", "about": aboutFooter, "firstHead": "навигация",  "firstItems": firstFooterItems, "secondHead": "о нас", "secondItems": secondFooterItems, "thirdHead":  "Служба поддержки", "thirdItems": thirdFooterItems, "copyright": copyrightFooter, "subscribeHead": "Подписка","subscribeText": subscribeTextFooter})

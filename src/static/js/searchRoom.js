@@ -1,4 +1,5 @@
 import { howMany } from "../../components/dropdown/dropdown";
+import { showMenu } from "../../components/header/header";
 require("../../components/calendar/datepicker.js");
 import noUiSlider from "nouislider/distribute/nouislider";
 import pagination from "paginationjs/dist/pagination";
@@ -316,6 +317,8 @@ $('#example-pagination').pagination({
     showPrevious: false,
     showNext: true,
     nextText: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white"/></svg>',
+    showNavigator: true,
+    formatNavigator: '<%= currentPage %> - <%= totalPage %> из <%= totalNumber %> вариантов аренды',
     callback: function(data, pagination) {
         var html = numbersTemplate(data);
         $('#data-container').html(html);
@@ -337,4 +340,22 @@ $('#example-pagination').pagination({
     },
 })
 
+//menu
+
+showMenu();
+
+//showHideFilters
+
+function showHideFilters() {
+    let showFiltersButton = document.querySelector(".main__filters-button .button");
+    let showResultButton = document.querySelector(".main__filter--result .button");
+    function showHide() {
+        let filters = document.querySelector(".main__filters");
+        filters.classList.toggle("main__filters--disclosed")
+    }
+    showFiltersButton.addEventListener("click", showHide);
+    showResultButton.addEventListener("click", showHide);
+}
+
+showHideFilters();
 

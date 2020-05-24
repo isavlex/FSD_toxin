@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "parcel serve src/pug/pages/$npm_package_main --open ",
-    "predeploy": "rm -rf dist/* && parcel build src/pug/pages/index.pug --public-url ./",
+    "predeploy": "rm -rf dist/* && cp src/static/img/numbers/*  dist/ && parcel build src/pug/pages/index.pug --public-url ./",
     "deploy": "yarn run predeploy && gh-pages -d dist"
   },
   "keywords": [],
