@@ -87,7 +87,7 @@ function showHideCards () {
             if (cardSelection.classList.contains("card--deactive")) {
                 cardRegister.classList.add("card--deactive");
                 cardLogin.classList.remove("card--deactive");
-            } else {
+            } else {  
                 cardSelection.classList.toggle("card--deactive");
                 cardLogin.classList.toggle("card--deactive");
             }

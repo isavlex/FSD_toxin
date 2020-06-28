@@ -1,0 +1,8 @@
+mixin footnotes(options)
+    -var classOfLi;
+    ul.footnotes
+        each item, indexOfList in options.list
+            each className, indexOfClases in options.clases
+                if indexOfList == indexOfClases
+                    -classOfLi = className
+            li(class="footnotes__item footnotes__item--" + classOfLi)= item

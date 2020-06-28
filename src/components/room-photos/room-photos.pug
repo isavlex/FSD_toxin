@@ -1,0 +1,8 @@
+mixin room-photos(options)
+    .room-photos
+        .room-photos__big
+            img(src="../../static/img/room-details/" + options.mainPhoto + ".jpg", class="room-photos__big-pic" alt="Photo of room")
+        .room-photos__little
+            each littlePhoto in options.littlePhotos
+                img(src="../../static/img/room-details/" + littlePhoto + ".jpg", class="room-photos__little-pic" alt="Photo of room")
+            

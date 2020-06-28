@@ -1,6 +1,7 @@
 mixin bullet(options)
     section.bullet
-        h3.heading-mb100= options.heading
+        if options.heading
+            h3.heading-mb100= options.heading
         ul.bullet__list
             each item in options.items
                 li.bullet__item= item

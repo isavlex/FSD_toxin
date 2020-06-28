@@ -1,0 +1,57 @@
+extends ../layouts/main
+
+block varibles
+    -var pageTitle = 'Room details'
+    -var cssPath = '../../static/scss/main.scss'
+    -var headerItems = {"О нас": "/", "Услуги": {"Submenu1": "#", "Super-Submenu2": "#", "Submenu3": "#",}, "Вакансии": "#", "Новости": "#", "Соглашения": {"Submenu1": "#", "Super-Submenu2": "#", "Submenu3": "#",}}
+    -var firstFooterItems = {"О нас": "#", "Новости": "#", "Служба поддержки": "#", "Услуги": "#", }
+    -var secondFooterItems = {"О сервисе": "#", "Наша команда": "#", "Вакансии": "#", "Инвесторы": "#", }
+    -var thirdFooterItems = {"Соглашения": "#", "Сообщества": "#", "Связь с нами": "#"}
+    -var aboutFooter = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    -var copyrightFooter = "Copyright © 2018 Toxin отель. Все права зачищены."
+    -var subscribeTextFooter = "Получайте специальные предложения и новости сервиса"
+block content
+    .all-site-wrap
+        +header({"mode": "site", "items": headerItems, "activeItem": "Home", "registered": false, "buttonLogin": "Войти", "buttonRegister": "Зарегистрироваться", "buttonLoginDataAction": "login", "buttonRegisterDataAction": "register"})
+        +room-photos({"mainPhoto": "room-details", "littlePhotos": ["room-details-2", "room-details-3"]})
+        main.main.main--details
+            
+            .room-details-wrap
+                .room-details
+                    .intelligence
+                        h2.heading-q Сведения о номере
+                        +features({"img": "smile", "heading": "Комфорт", "text": "Шумопоглощающие стены"})
+                        +features({"img": "build", "heading": "Удобство", "text": "Окно в каждой из спален"})
+                        +features({"img": "comfort", "heading": "Уют", "text": "Номер оснащён камином", "notUnderline": true})
+                    .impressions
+                        h2.heading-q Впечатления от номера
+                        .flex-block-sb.flex-block-sb--impressions
+                            +impressions({"id": "circle-schedule", "vote": 260})
+                            .impressions__footnotes
+                                +footnotes({"list": ["великолепно", "хорошо", "удовлетворительно", "разочарован"], "clases": ["orange", "green", "violet", "black"]})
+                .reviews
+                    .flex-block-sb
+                        h2.heading-q Отзывы посетителей номера
+                        p.paragraph.reviews__count 2 отзыва
+                    .reviews__review
+                        +review({"img": "man.png", "heading": "Мурад Сарафанов", "when": "5 дней назад", "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                    .reviews__review
+                        +review({"img": "girl.png", "heading": "Патрисия Стёклышкова", "when": "Неделю назад", "text": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"})
+                .regulations
+                    .regulation__block
+                        h2.heading-q.mb20-indent Правила
+                        +bullet({"items": ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+                    .regulation__block
+                        h2.heading-q.mb20-indent Отмена
+                        p.paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            .room-total-card
+                +card({"mode": "total", "totalGuestsId": "example22", "totalRangeClass": "cards-example","valueFrom": "25.03.2020", "valueTo": "29.03.2020", "valueGuests": "3 гостя"})
+            
+
+                
+
+        +footer({"mode": "complex", "subscriptionClass": "text-field__subscription--catch", "about": aboutFooter, "firstHead": "навигация",  "firstItems": firstFooterItems, "secondHead": "о нас", "secondItems": secondFooterItems, "thirdHead":  "Служба поддержки", "thirdItems": thirdFooterItems, "copyright": copyrightFooter, "subscribeHead": "Подписка","subscribeText": subscribeTextFooter})
+
+block scripts
+    script(src="../../static/js/main.js")
+    script(src="../../static/js/roomDetails.js")

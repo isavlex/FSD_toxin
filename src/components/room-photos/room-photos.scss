@@ -1,0 +1,25 @@
+.room-photos {
+    display: flex;
+    max-height: 485px;
+}
+
+.room-photos__big {
+    max-width: 981px;
+    overflow: hidden;
+}
+
+.room-photos__little {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.room-photos__big-pic {
+    width: 100%;
+    overflow: hidden;
+}
+.room-photos__little-pic {
+    // max-height: 242.5px;
+    width: 100%;
+    overflow: hidden;
+}

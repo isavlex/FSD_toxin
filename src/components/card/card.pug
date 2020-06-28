@@ -55,7 +55,7 @@ mixin card(options)
                 .card__item
                     h2.heading-q Итого
                     .card__doted
-                    h2.heading-q 38 081₽
+                    h2.heading-q.card__price 38 081₽
             .card__wrap-btn
                     +buttons({"mode": "big", "value": "забронировать"})
         if options.mode == "login"

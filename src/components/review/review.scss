@@ -1,27 +1,32 @@
-.reviews {
+.review {
     // display: flex;
     max-width: 711px;
 }
 
-.reviews__img {
+.review__img {
     display: flex;
     
 }
 
-.reviews__pic {
+.review__wrap {
     width: 48px;
     height: 48px;
     border-radius: 50%;
+    overflow: hidden;
     margin-right: 10px;
     margin-bottom: 12px;
-    cursor: pointer;
 }
 
-.reviews__text {
+.review__pic {
+    width: 48px;
+    
+}
+
+.review__text {
     display: flex;
 }
 
-.reviews__like {
+.review__like {
     display: flex;
     justify-content: center;
     min-width: 48px;

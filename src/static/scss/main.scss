@@ -1,3 +1,4 @@
+@import 'mixins';
 @import 'normalize';
 @import 'vars';
 @import 'fonts';
@@ -5,7 +6,6 @@
 @import 'typography';
 @import 'colors';
 @import 'ui-kit';
-@import 'mixins';
 @import '../../components/components';
 
 
@@ -131,6 +131,17 @@ body {
     padding: 1.3rem 1rem 0 1rem;
 }
 
+.flex-block-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.flex-block-sb--impressions {
+    padding-top: 20px;;
+}
+
 .all-site-wrap {
     max-width: 1440px;
     margin: 0 auto;
@@ -167,6 +178,86 @@ body {
     padding-bottom: 70px;
 }
 
+.main--details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include breakpoint-dfirst(1440px) {
+        flex-direction: column;
+    }
+    // background: url(../img/room-details/background.jpg) no-repeat;
+}
+
+.room-details-wrap {
+
+    max-width: 712px;
+    @include breakpoint-dfirst(phone) {
+        padding: 0 $general-indent - 8;
+    }
+}
+
+.room-total-card {
+    flex-basis: 380px;
+    
+    margin-left: 68px;
+    @include breakpoint-dfirst (1440px) {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 0;
+    }
+    
+}
+
+.regulations {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    @include breakpoint-dfirst (phone) {
+        justify-content: center;    
+    }
+}
+
+.regulation__block {
+    min-width: 300px;
+    flex-basis: 50%;
+}
+
+.impressions {
+    @include breakpoint-dfirst(718px) {
+        margin-top: 30px;
+    }
+}
+
+.main__block {
+    display: flex;
+}
+
+
+
+.intelligence {
+    margin-right: 70px;
+    @include breakpoint-dfirst(phone) {
+        margin: 0px;
+    }
+}
+
+
+
+.reviews {
+    margin-top: 30px;
+}
+
+.reviews__review {
+    margin-top: 20px;
+}
+
+.reviews__count {
+    white-space: nowrap;
+}
+
 .main__rooms {
     padding-left: 50px;
     width: 100%;
@@ -175,6 +266,19 @@ body {
         padding-left: 0;
     }
 }
+
+.room-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include breakpoint-dfirst(phone) {
+        
+    }
+}
+
+
+
 
 .main__header {
     @include breakpoint-dfirst (lg-tablet) {
@@ -254,10 +358,13 @@ body {
     }
 }
 
+
+
 .main__pagination {
     display: flex;
     justify-content: center;
 }
+
 
 @media only screen and (max-width: $tablet) {
     .md-mb-indent {

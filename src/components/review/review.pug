@@ -1,0 +1,14 @@
+mixin review(options)
+    .review
+        .review__img
+            a(href="#" class="review__wrap")
+                img(src="../../static/img/" + options.img, alt= options.heading class="review__pic")
+            .review__header
+                p.heading-mb75= options.heading
+                p.paragraph= options.when
+            
+        .review__text
+            .review__like
+                +like({"number": 12, "state": "liked"})
+            .review__body
+                p.paragraph= options.text

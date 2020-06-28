@@ -1,0 +1,25 @@
+.impressions-schedule {
+    position: relative;
+    height: 120px;
+    max-width: 120px;
+}
+
+.impressions-schedule__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-family: $montserrat;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 0.93rem;
+    color: $purple;
+    text-transform: uppercase;
+}
+
+.impressions-schedule__vote {
+    font-family: $main-font;
+    font-size: 1.5rem;
+    line-height: 1.87rem;
+}
